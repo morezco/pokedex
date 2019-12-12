@@ -16,16 +16,22 @@ export const Container = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  background-color: white;
   height: 40px;
+  padding-right: 40px;
+
+  background-color: white;
+  color: ${Colours.dark};
+
+  font-size: 1em;
+  text-indent: 1em;
+
   border-radius: 20px;
   border: 1px solid ${Colours.lighter};
-  outline: none;
-  text-indent: 1em;
-  padding-right: 40px;
-  color: ${Colours.dark};
-  font-size: 0.8em;
+  box-shadow: 0px 0px 40px #00000022;
+
   transition: all 0.2s ease-in-out;
+
+  outline: none;
 
   &:hover {
     box-shadow: 0px 0px 10px #00000022;

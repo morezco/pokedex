@@ -32,7 +32,7 @@ function Navbar({ history, location }: NavbarProps): React.ReactElement {
   const path = location.pathname.split('/')[1];
 
   return (
-    <Header {...{ hideOnScroll, open }}>
+    <Header data-testid='Navbar' {...{ hideOnScroll, open }}>
       <h1 onClick={goHome}>Pokedex</h1>
       <Wrapper>
         <LogoContainer>

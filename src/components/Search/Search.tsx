@@ -32,7 +32,7 @@ export default observer(function Search() {
 
   return (
     <Container>
-      <Input ref={ref} onChange={changeHandler} />
+      <Input placeholder={'Pokémon'} ref={ref} onChange={changeHandler} />
       <FontAwesomeIcon
         className='icon'
         icon={PokemonStore.fetching ? faCog : faSearch}
