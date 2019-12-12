@@ -1,5 +1,5 @@
 import { observable, action, computed, toJS } from 'mobx';
-import api from 'api';
+import Service from 'services/PokemonService';
 
 class PokemonStore {
   @observable private Collection: Array<any> = [];
@@ -19,13 +19,13 @@ class PokemonStore {
 
   @action public async loadCollection() {
     this.Fetching = true;
-    this.Collection = (await api.get('/pokemon?limit=-1')).data;
+    this.Collection = await Service.getAll();
     this.Fetching = false;
   }
 
   @action public async fetchPokemon(id: string | number) {
     this.Fetching = true;
-    this.Pokemon = (await api.get(`/pokemon/${id}`)).data;
+    this.Pokemon = await Service.getOne(id);
     this.Fetching = false;
   }
 
