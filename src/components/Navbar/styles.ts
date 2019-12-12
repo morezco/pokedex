@@ -6,21 +6,34 @@ interface ContainerProps {
   open?: boolean;
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Header = styled.header<ContainerProps>`
   display: flex;
-  min-width: 100vw;
-  position: absolute;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+
+  min-width: 100vw;
   top: 0px;
   left: 0;
+  height: 150px;
+
+  position: absolute;
   opacity: 0.8;
   transition: all 0.3s ease-in-out;
   z-index: 1000;
-  height: 90px;
   overflow: hidden;
 
-  ${({ open }) => open && 'height: 100vh;'}
+  ${({ open }) =>
+    open &&
+    `
+    height: 100vh;
+    &, * > * {
+      background-color: white;
+      color: black !important;
+      * > *:hover {
+        color: white !important;
+      }
+    }
+  `}
 
   h1 {
     text-shadow: 0px 0px 20px #00000033;
@@ -34,7 +47,7 @@ export const Container = styled.div<ContainerProps>`
       `
     background-color: red;
     h1 {
-      color: white !important;
+      color: white;
     }`) ||
     `
     transform: translateY(-100%);
@@ -43,13 +56,16 @@ export const Container = styled.div<ContainerProps>`
 
   @media (max-width: 1000px) {
     top: 0;
+
+    ${({ open }) => !open && 'max-height: 80px;'}
+
     & > h1 {
       display: none;
     }
   }
 `;
 
-export const Body = styled.div`
+export const Wrapper = styled.div`
   box-shadow: 0px 0px 30px #00000044;
   transition: all 0.3s ease-in-out;
   justify-content: space-between;
@@ -75,30 +91,44 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled.nav`
   width: 100%;
+  margin-top: -22px;
+  ul {
+    width: 100%;
+    margin: none;
+    padding: 0;
+    li {
+      list-style-type: none;
+      background-color: white;
+      font-size: 1em;
+      border: none;
+      color: #444;
+      width: 10%;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-weight: 550;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: 1.1em Poppins;
+      padding: 20px;
 
-  button {
-    background-color: white;
-    font-size: 1em;
-    border: none;
-    height: 100%;
-    color: #444;
-    width: 10%;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-weight: 550;
+      &:hover,
+      &.Selected {
+        background-color: ${Colours.dark};
+        color: white;
+      }
 
-    &:hover,
-    &.Selected {
-      background-color: ${Colours.dark};
-      color: white;
+      @media (max-width: 1000px) {
+        width: 100%;
+        height: 60px;
+      }
     }
 
-    @media (max-width: 1000px) {
-      width: 100%;
-      height: 60px;
+    @media (min-width: 1000px) {
+      display: flex;
     }
   }
 

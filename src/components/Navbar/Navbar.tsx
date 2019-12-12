@@ -3,14 +3,9 @@ import { Categories } from 'shared/constants';
 import { useScrollPosition } from 'shared/hooks';
 import { withRouter } from 'react-router-dom';
 
-import { Container, Body, LogoContainer, ButtonsContainer } from './styles';
+import { Header, Wrapper, LogoContainer, ButtonsContainer } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowUp,
-  faArrowDown,
-  faAngleDown,
-  faAngleLeft,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const categories = Categories.map(x => [x.toLowerCase(), x]);
 
@@ -37,9 +32,9 @@ function Navbar({ history, location }: NavbarProps): React.ReactElement {
   const path = location.pathname.split('/')[1];
 
   return (
-    <Container {...{ hideOnScroll, open }}>
+    <Header {...{ hideOnScroll, open }}>
       <h1 onClick={goHome}>Pokedex</h1>
-      <Body>
+      <Wrapper>
         <LogoContainer>
           <h1 onClick={goHome}>Pokedex</h1>
           <FontAwesomeIcon
@@ -50,18 +45,20 @@ function Navbar({ history, location }: NavbarProps): React.ReactElement {
           />
         </LogoContainer>
         <ButtonsContainer>
-          {categories.map(category => (
-            <button
-              key={category[0]}
-              onClick={() => redirect(`/${category[0]}`)}
-              className={String(path === category[0] && 'Selected')}
-            >
-              {category[1]}
-            </button>
-          ))}
+          <ul>
+            {categories.map(category => (
+              <li
+                key={category[0]}
+                onClick={() => redirect(`/${category[0]}`)}
+                className={String(path === category[0] && 'Selected')}
+              >
+                {category[1]}
+              </li>
+            ))}
+          </ul>
         </ButtonsContainer>
-      </Body>
-    </Container>
+      </Wrapper>
+    </Header>
   );
 }
 
