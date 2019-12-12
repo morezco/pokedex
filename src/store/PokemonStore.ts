@@ -1,4 +1,4 @@
-import { observable, action, computed } from 'mobx';
+import { observable, action, computed, toJS } from 'mobx';
 import api from 'api';
 
 class PokemonStore {
@@ -42,11 +42,11 @@ class PokemonStore {
   }
 
   @computed get collection(): Array<any> {
-    return this.Collection;
+    return toJS(this.Collection);
   }
 
   @computed get results(): Array<any> {
-    return this.Results;
+    return toJS(this.Results);
   }
 
   @computed get pokemon(): any {
