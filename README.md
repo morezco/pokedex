@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Pokedex
 
-## Available Scripts
+Este projeto é um exercício de front-end feito para simular um consumidor-apresentador da API hospedada em https://pokeapi.co.
 
-In the project directory, you can run:
+Esta aplicação de apresentação é feita em React, empregando o uso de TypeScript para o código e fluxo de dados com a biblioteca MobX.
+
+## Configuração de ambiente
+
+```json
+{
+  "node": "^12.12.0",
+  "yarn": "^1.19.1"
+}
+```
+
+## Rotinas de uso local
+
+### Para desenvolvimento rápido
+
+```
+git fetch
+git checkout development
+yarn
+yarn start
+```
+
+Na raíz do projeto, pode-se executar:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Para rodar a aplicação em modo de desenvolvimento.<br />
+Abra [http://localhost:3001](http://localhost:3001) para vê-la no navegador.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para iniciar a cabine de testes da aplicação, Jest.<br />
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para consolidar uma versão de produção da aplicação.<br />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Estrutura de Arquivos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**O Componente App reside em sua própria pasta dedicada, `/app`.** Este componente deve ser responsável apenas por instanciar **Páginas** e engatilhar os processos iniciais para o carregamento saudável da aplicação, se houverem quaisquer, e instanciar qual componente página for melhor apropriado para o estado maior da aplicação.
 
-### `yarn eject`
+**As páginas residem em `/pages`.** Suas funções devem ser sempre instanciar componentes que, para um subconjunto de rotas quaisquer que compartilhem do mesmo estado maior da aplicação (por exemplo, Autenticação) ou que instanciem os mesmos **componentes de UI** estáticos (por exemplo, a Navbar), estejam sempre presentes. Além destes componentes estáticos, encarrega-se de instanciar também as ditas **rotas**. Se aplicável, um componente página deve estar envelopado pelo BrowserRouter do react-router-dom para permitir que todos os componentes-filhos possam herdar e usar history e location para somente aquela seção da aplicação.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Rotas residem em `/routes`.** Devem ser nada mais que a estrutura verbose do react router, com exceção do BrowserRouter, que já se faz presente nos componentes página. A divisão dos arquivos de rotas deve ir ao encontro da divisão dos componentes página.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Componentes de UI ficam em `/components`.** Se um componente é generalista o suficiente para pertencer a mais de uma página, ele pertence a `/components`. Componentes que dependam de componentes menores devem ter estes colocados dentro de sua própria estrutura.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Registros ficam em `store/`**. O fluxo de dados nesta aplicação consiste de estados globais estáticos isolados uns dos outros em arquivos Store, na pasta store. Os estados são compostos de classes com observáveis do MobX que qualquer componente pode acessar e modificar.
