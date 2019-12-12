@@ -1,14 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { Navbar } from 'components';
+import { shallow } from 'enzyme';
 
 import App from './App';
 
-import Views from 'views';
-
 describe('App Component', () => {
   it('renders', () => {
-    const { getByTestId } = render(<App />);
-    const AppElement = getByTestId('app');
-    expect(AppElement).toBeInTheDocument();
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(Navbar)).toHaveLength(1);
   });
 });

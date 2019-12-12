@@ -81,6 +81,7 @@ export const ButtonsContainer = styled.div`
     outline: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    font-weight: 550;
 
     &:hover,
     &.Selected {
