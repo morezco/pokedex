@@ -1,5 +1,11 @@
 import React from 'react';
 
-export default function Row() {
-  return <div></div>;
+import { Element, RowProps } from './styles';
+
+export default function Row({ children, ...props }: RowProps) {
+  return (
+    <Element className='row' {...props}>
+      {children}
+    </Element>
+  );
 }

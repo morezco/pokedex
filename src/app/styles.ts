@@ -1,8 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const AppContainer = styled.div`
-  width: 100vw;
+interface AppContainerProps {
+  moveUpOnScroll?: boolean;
+}
+
+export const AppContainer = styled.main<AppContainerProps>`
+  max-width: 100vw;
+  margin-top: 200px;
+
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+
+  @media (max-width: 1000px) {
+    margin-top: 120px;
+  }
 `;

@@ -36,13 +36,14 @@ function Navbar({ history, location }: NavbarProps): React.ReactElement {
       <h1 onClick={goHome}>Pokedex</h1>
       <Wrapper>
         <LogoContainer>
-          <h1 onClick={goHome}>Pokedex</h1>
-          <FontAwesomeIcon
-            color='#fff'
-            size='2x'
-            icon={open ? faAngleDown : faAngleLeft}
-            onClick={toggle}
-          />
+          <h1 onClick={goHome}>
+            Pokedex{' '}
+            <FontAwesomeIcon
+              className='fai'
+              icon={open ? faAngleDown : faAngleLeft}
+              onClick={toggle}
+            />
+          </h1>
         </LogoContainer>
         <ButtonsContainer>
           <ul>

@@ -1,0 +1,14 @@
+@media (max-width: 1000px) {
+  figure {
+    z-index: -1;
+    margin-top: -120px;
+  }
+
+  p {
+    text-align: center !important;
+  }
+}
+
+img {
+  filter: drop-shadow(0px 0px 30px #00000024);
+}
