@@ -50,7 +50,7 @@ class PokemonStore {
   }
 
   @computed get pokemon(): any {
-    return this.Pokemon;
+    return toJS(this.Pokemon);
   }
 }
 
