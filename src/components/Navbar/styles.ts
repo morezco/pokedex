@@ -3,6 +3,7 @@ import { Colours } from 'styles';
 
 interface ContainerProps {
   hideOnScroll?: boolean;
+  open?: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -15,6 +16,11 @@ export const Container = styled.div<ContainerProps>`
   left: 0;
   opacity: 0.8;
   transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  height: 90px;
+  overflow: hidden;
+
+  ${({ open }) => open && 'height: 100vh;'}
 
   h1 {
     text-shadow: 0px 0px 20px #00000033;
@@ -53,11 +59,12 @@ export const Body = styled.div`
 
   @media (max-width: 1000px) {
     width: 100vw;
+    display: block;
   }
 `;
 
 export const LogoContainer = styled.div`
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 20%;
   display: none;
@@ -88,9 +95,15 @@ export const ButtonsContainer = styled.div`
       background-color: ${Colours.dark};
       color: white;
     }
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      height: 60px;
+    }
   }
 
   @media (max-width: 1000px) {
-    display: none;
+    display: flex;
+    flex-direction: column;
   }
 `;
