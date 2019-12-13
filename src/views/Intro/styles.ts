@@ -13,3 +13,15 @@ export const Section = styled.section`
     text-justify: justify;
   }
 `;
+
+export const SearchLayer = styled.div`
+  width: 100%;
+  padding: 0px;
+
+  position: sticky;
+  top: 20px;
+  z-index: 500;
+
+  display: flex;
+  justify-content: flex-end;
+`;

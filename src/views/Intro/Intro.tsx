@@ -2,7 +2,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 
 import './Intro.css';
-import { Section } from './styles';
+import { Section, SearchLayer } from './styles';
 import { eevee } from 'assets';
 
 import { Row, Search, List } from 'components';
@@ -20,8 +20,12 @@ export default observer(function Intro() {
             spanning across nearly three decades and still ongoing. In this
             website, you'll find a knowledge base for all of your Pokémon needs.
           </p>
-          <Search />
-          {Pokemons.lookup && <List />}
+          <SearchLayer>
+            <Search />
+          </SearchLayer>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            {Pokemons.lookup && <List />}
+          </div>
         </Row>
         <Row vertical>
           <figure>
