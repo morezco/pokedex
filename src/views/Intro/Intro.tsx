@@ -20,16 +20,6 @@ export default observer(function Intro() {
             spanning across nearly three decades and still ongoing. In this
             website, you'll find a knowledge base for all of your Pokémon needs.
           </p>
-          <SearchLayer>
-            <Search />
-            {!!Pokemons.results.length && (
-              <p>
-                {Pokemons.results.length}
-                {Pokemons.results.length === 50 && '+'} resultados
-              </p>
-            )}
-          </SearchLayer>
-          {Pokemons.lookup && <List />}
         </Row>
         <Row vertical>
           <figure>
@@ -37,6 +27,15 @@ export default observer(function Intro() {
           </figure>
         </Row>
       </Row>
+      <SearchLayer>
+        {!!Pokemons.results.length && (
+          <p>
+            {Pokemons.results.length}
+            {Pokemons.results.length === 50 && '+'} resultados
+          </p>
+        )}
+      </SearchLayer>
+      {Pokemons.lookup && <List />}
     </Section>
   );
 });

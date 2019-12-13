@@ -1,12 +1,12 @@
 import React from 'react';
-import { Navbar } from 'components';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import App from './App';
 
 describe('App Component', () => {
   it('renders', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find(Navbar)).toHaveLength(1);
+    const { getByTestId } = render(<App />);
+    const Topbar = getByTestId('Topbar');
+    expect(Topbar).toBeInTheDocument();
   });
 });

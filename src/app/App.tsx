@@ -6,7 +6,7 @@ import { useScrollPosition } from 'shared/hooks';
 import './App.css';
 import { AppContainer } from './styles';
 
-import { Navbar } from 'components';
+import { SearchBar } from 'components';
 import Routes from 'routes';
 
 import { Pokemons } from 'store';
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <SearchBar />
       <AppContainer {...{ moveUpOnScroll }}>
         <Routes />
       </AppContainer>

@@ -9,7 +9,6 @@ export const Section = styled.section`
 
   p {
     font: 1.3em Poppins;
-    text-align: right;
     text-justify: justify;
   }
 `;
@@ -17,10 +16,6 @@ export const Section = styled.section`
 export const SearchLayer = styled.div`
   width: 100%;
   padding: 0px;
-
-  position: sticky;
-  top: 20px;
-  z-index: 500;
 
   display: flex;
   justify-content: flex-end;
