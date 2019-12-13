@@ -1,12 +1,15 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 
 import './Intro.css';
 import { Section } from './styles';
 import { eevee } from 'assets';
 
-import { Row, Search } from 'components';
+import { Row, Search, List } from 'components';
 
-export default function Intro() {
+import { Pokemons } from 'store';
+
+export default observer(function Intro() {
   return (
     <Section>
       <Row>
@@ -18,13 +21,14 @@ export default function Intro() {
             website, you'll find a knowledge base for all of your Pokémon needs.
           </p>
           <Search />
+          {Pokemons.lookup && <List />}
         </Row>
         <Row vertical>
           <figure>
-            <img src={eevee} />
+            <img alt='eevee' src={eevee} />
           </figure>
         </Row>
       </Row>
     </Section>
   );
-}
+});

@@ -8,6 +8,7 @@ class PokemonStore {
   @observable private Fetching: boolean = false;
   @observable private Loading: boolean = false;
   @observable private Pokemon: any;
+  @observable private Lookup: string = '';
 
   @action public async search(
     lens: (value: any, index: number, array: any[]) => any,
@@ -51,6 +52,14 @@ class PokemonStore {
 
   @computed get pokemon(): any {
     return toJS(this.Pokemon);
+  }
+
+  @computed get lookup(): string {
+    return this.Lookup;
+  }
+
+  set lookup(value: string) {
+    this.Lookup = value;
   }
 }
 

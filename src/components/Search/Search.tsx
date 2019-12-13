@@ -6,7 +6,7 @@ import { Container, Input } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faCog } from '@fortawesome/free-solid-svg-icons';
 
-import { PokemonStore } from 'store';
+import { Pokemons } from 'store';
 
 export default observer(function Search() {
   const Clean = (x: string) =>
@@ -21,7 +21,8 @@ export default observer(function Search() {
       target: { value },
     } = e;
 
-    PokemonStore.search((x: any) => ExtractProperty(x).includes(Clean(value)));
+    Pokemons.search((x: any) => ExtractProperty(x).includes(Clean(value)));
+    Pokemons.lookup = value;
   };
 
   const ref = useRef<HTMLInputElement>(null);
@@ -31,12 +32,12 @@ export default observer(function Search() {
   }, [ref]);
 
   return (
-    <Container>
+    <Container data-testid='SearchContainer'>
       <Input placeholder={'Pokémon'} ref={ref} onChange={changeHandler} />
       <FontAwesomeIcon
         className='icon'
-        icon={PokemonStore.fetching ? faCog : faSearch}
-        {...{ spin: PokemonStore.fetching }}
+        icon={Pokemons.fetching ? faCog : faSearch}
+        {...{ spin: Pokemons.fetching }}
       />
     </Container>
   );

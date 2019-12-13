@@ -1,3 +1,3 @@
-import PokemonStore from './PokemonStore';
+import Pokemons from './PokemonStore';
 
-export { PokemonStore };
+export { Pokemons };
