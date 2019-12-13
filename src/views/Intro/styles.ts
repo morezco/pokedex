@@ -24,4 +24,9 @@ export const SearchLayer = styled.div`
 
   display: flex;
   justify-content: flex-end;
+
+  p {
+    width: 200px;
+    margin-top: 5px;
+  }
 `;

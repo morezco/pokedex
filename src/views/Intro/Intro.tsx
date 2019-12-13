@@ -22,10 +22,14 @@ export default observer(function Intro() {
           </p>
           <SearchLayer>
             <Search />
+            {!!Pokemons.results.length && (
+              <p>
+                {Pokemons.results.length}
+                {Pokemons.results.length === 50 && '+'} resultados
+              </p>
+            )}
           </SearchLayer>
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            {Pokemons.lookup && <List />}
-          </div>
+          {Pokemons.lookup && <List />}
         </Row>
         <Row vertical>
           <figure>

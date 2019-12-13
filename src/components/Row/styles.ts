@@ -14,7 +14,7 @@ const RIGHT = (vertical: boolean) => css`
   ${vertical ? 'align-items' : 'justify-content'}: flex-end;
 `;
 
-const COL = css`
+const COL = () => css`
   flex-direction: column;
 `;
 
@@ -22,15 +22,15 @@ const CENTER = (vertical: boolean) => css`
   ${vertical ? 'align-items' : 'justify-content'}: CENTER;
 `;
 
-const SPACED = css`
+const SPACED = () => css`
   justify-content: space-between;
 `;
 
-const EVEN = css`
+const EVEN = () => css`
   justify-content: space-evenly;
 `;
 
-const AROUND = css`
+const AROUND = () => css`
   justify-content: space-around;
 `;
 
@@ -38,12 +38,12 @@ export const Element = styled.div<RowProps>`
   display: flex;
   width: 100%;
 
-  ${({ vertical }) => vertical && COL}
+  ${({ vertical }) => vertical && COL()}
   ${({ center, vertical }) => center && CENTER(!!vertical)}
   ${({ right, vertical }) => right && RIGHT(!!vertical)}
-  ${({ spaced }) => spaced && SPACED}
-  ${({ even }) => even && EVEN}
-  ${({ around }) => around && AROUND}
+  ${({ spaced }) => spaced && SPACED()}
+  ${({ even }) => even && EVEN()}
+  ${({ around }) => around && AROUND()}
 
   @media (max-width: 1000px) {
     ${COL}

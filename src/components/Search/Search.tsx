@@ -21,8 +21,10 @@ export default observer(function Search() {
       target: { value },
     } = e;
 
-    Pokemons.search((x: any) => ExtractProperty(x).includes(Clean(value)));
-    Pokemons.lookup = value;
+    Pokemons.search((x: any) =>
+      value ? ExtractProperty(x).includes(Clean(value)) : false,
+    );
+    Pokemons.lookup = value || '';
   };
 
   const ref = useRef<HTMLInputElement>(null);
