@@ -14,7 +14,9 @@ class PokemonStore {
     lens: (value: any, index: number, array: any[]) => any,
   ) {
     this.Searching = true;
-    this.Results = this.Collection.filter(lens);
+    this.Results = toJS(this.Collection)
+      .filter(lens)
+      .slice(0, 50);
     this.Searching = false;
   }
 

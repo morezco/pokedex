@@ -6,11 +6,6 @@ export const Container = styled.div`
   flex-direction: column;
   width: 80%;
 
-  p {
-    font-size: 0.8em;
-    color: grey;
-  }
-
   @media (max-width: 1000px) {
     width: 100%;
   }

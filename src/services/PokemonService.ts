@@ -3,7 +3,7 @@ import api from 'api';
 class PokemonService {
   public async getAll(): Promise<Array<any>> {
     const { data } = await api.get('/pokemon?limit=-1');
-    return data;
+    return data.results;
   }
 
   public async getOne(id: string | number): Promise<any> {

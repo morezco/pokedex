@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
-import { Container, Content } from './styles';
+import { Content } from './styles';
 
 import Tile from './Tile/Tile';
 
@@ -14,12 +14,10 @@ interface PokemonDataBlob {
 
 export default observer(function List() {
   return (
-    <Container>
-      <Content>
-        {Pokemons.results.map((result: PokemonDataBlob) => (
-          <Tile data={result} />
-        ))}
-      </Content>
-    </Container>
+    <Content>
+      {Pokemons.results.map((result: PokemonDataBlob) => (
+        <Tile data={result} />
+      ))}
+    </Content>
   );
 });

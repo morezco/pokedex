@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
     width: 150px;
     height: 150px
+    margin: 5px;
 
     display: flex;
     flex: 1 0 25%;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -17,6 +19,8 @@ export const Container = styled.div`
     background-color: white;
     box-shadow: 0px 0px 20px #00000044;
     border-radius: 10px;
+
+    font: 1em Poppins;
 
     &:hover {
         transform: scale(1.05, 1.05);

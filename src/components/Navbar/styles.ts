@@ -12,6 +12,7 @@ export const Header = styled.header<ContainerProps>`
   align-items: center;
 
   min-width: 100vw;
+  max-width: 100vw;
   top: 0px;
   left: 0;
   height: 125px;
@@ -50,7 +51,7 @@ export const Header = styled.header<ContainerProps>`
   }
 
   ${({ hideOnScroll, open }) =>
-    (hideOnScroll &&
+    (!hideOnScroll &&
       css`
         background-color: red;
         h1 {
@@ -65,7 +66,6 @@ export const Header = styled.header<ContainerProps>`
 `;
 
 export const Wrapper = styled.div`
-  box-shadow: 0px 0px 30px #00000044;
   transition: all 0.3s ease-in-out;
   justify-content: space-between;
 
@@ -93,7 +93,19 @@ export const LogoContainer = styled.div`
 
 export const ButtonsContainer = styled.nav`
   width: 100%;
-  margin-top: -22px;
+  height: 90px;
+
+  box-shadow: 0px 10px 10px #00000022;
+
+  z-index: 1000;
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   ul {
     width: 100%;
     margin: none;

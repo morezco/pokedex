@@ -15,12 +15,12 @@ export interface NavbarProps {
 }
 
 function Navbar({ history, location }: NavbarProps): React.ReactElement {
-  const [hideOnScroll, setHideOnScroll] = useState(true);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
   const [open, setOpen] = useState(false);
 
   useScrollPosition(
     ({ prevPos, currPos }: any) => {
-      const display = currPos.y > prevPos.y || currPos.y > 5;
+      const display = currPos.y < prevPos.y && currPos.y < 200;
       if (display !== hideOnScroll) setHideOnScroll(display);
     },
     [hideOnScroll],
