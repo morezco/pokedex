@@ -15,7 +15,7 @@ export default function Tile({ data }: TileProps) {
   return (
     <Container>
       <h5>{data.name}</h5>
-      <PokemonPicture id={data.name} />
+      <PokemonPicture url={data.url} />
     </Container>
   );
 }
