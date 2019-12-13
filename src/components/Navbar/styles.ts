@@ -91,7 +91,7 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const ButtonsContainer = styled.nav`
+export const ButtonsContainer = styled.nav<ContainerProps>`
   width: 100%;
   height: 90px;
 
@@ -105,6 +105,8 @@ export const ButtonsContainer = styled.nav`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  ${({ open }) => open && 'height: auto;'}
 
   ul {
     width: 100%;

@@ -45,7 +45,7 @@ function Navbar({ history, location }: NavbarProps): React.ReactElement {
             />
           </h1>
         </LogoContainer>
-        <ButtonsContainer>
+        <ButtonsContainer {...{ open }}>
           <ul>
             {categories.map(category => (
               <li
