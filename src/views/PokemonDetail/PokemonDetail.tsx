@@ -72,11 +72,6 @@ export default observer(function PokemonDetail({
     })),
   });
 
-  if (pokemon) {
-    console.log(PokedexTable(pokemon));
-    console.log(StatsTable(pokemon));
-  }
-
   return (
     <Section padding={'50px'}>
       {!pokemon ? (
