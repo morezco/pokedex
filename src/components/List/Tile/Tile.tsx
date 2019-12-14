@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import { Container } from './styles';
 
-import { PokemonPicture } from 'components';
+import { PokemonSprite } from 'components';
 
 function Tile({ data, history }: any) {
   const gotoPokemon = () =>
@@ -14,7 +14,7 @@ function Tile({ data, history }: any) {
   return (
     <Container onClick={gotoPokemon}>
       <h5>{data.name}</h5>
-      <PokemonPicture url={data.url} />
+      <PokemonSprite url={data.url} />
     </Container>
   );
 }

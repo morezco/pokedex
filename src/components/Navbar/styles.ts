@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Colours } from 'styles';
 
 interface ContainerProps {
-  hideOnScroll?: boolean;
+  scrollEffects?: boolean;
   open?: boolean;
 }
 
@@ -50,8 +50,8 @@ export const Header = styled.header<ContainerProps>`
       `overflow: hidden; max-height: 80px;`}
   }
 
-  ${({ hideOnScroll, open }) =>
-    (!hideOnScroll &&
+  ${({ scrollEffects, open }) =>
+    (!scrollEffects &&
       css`
         background-color: red;
         h1 {

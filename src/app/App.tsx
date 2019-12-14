@@ -11,9 +11,25 @@ import Routes from 'routes';
 
 import { Pokemons } from 'store';
 
+declare global {
+  interface Window {
+    p: any;
+  }
+}
+
+window.p = Pokemons;
+
 function App() {
-  const [moveUpOnScroll, setMoveUpOnScroll] = useState(true);
+  const [scrollEffects, setscrollEffects] = useState(false);
   const [init, setInit] = useState(false);
+
+  useScrollPosition(
+    ({ currPos }: any) => {
+      const display = currPos.y > -50;
+      if (display !== scrollEffects) setscrollEffects(display);
+    },
+    [scrollEffects],
+  );
 
   useEffect(() => {
     if (!init) {
@@ -22,19 +38,11 @@ function App() {
     }
   }, [init]);
 
-  useScrollPosition(
-    ({ prevPos, currPos }: any) => {
-      const display = currPos.y > prevPos.y || currPos.y > 5;
-      if (display !== moveUpOnScroll) setMoveUpOnScroll(display);
-    },
-    [moveUpOnScroll],
-  );
-
   return (
     <Router>
-      <SearchBar />
-      <AppContainer {...{ moveUpOnScroll }}>
-        <Routes />
+      <SearchBar {...{ scrollEffects }} />
+      <AppContainer>
+        <Routes {...{ scrollEffects }} />
       </AppContainer>
     </Router>
   );

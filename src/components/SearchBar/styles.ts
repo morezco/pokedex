@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface ContainerProps {
-  hideOnScroll?: boolean;
+  scrollEffects?: boolean;
   hide?: boolean;
 }
 
@@ -39,8 +39,8 @@ export const Header = styled.header<ContainerProps>`
     }
   }
 
-  ${({ hideOnScroll }) =>
-    !hideOnScroll &&
+  ${({ scrollEffects }) =>
+    !scrollEffects &&
     css`
       background-color: red;
       h1 {

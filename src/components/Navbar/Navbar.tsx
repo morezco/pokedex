@@ -15,15 +15,15 @@ export interface NavbarProps {
 }
 
 function Navbar({ history, location }: NavbarProps): React.ReactElement {
-  const [hideOnScroll, setHideOnScroll] = useState(false);
+  const [scrollEffects, setscrollEffects] = useState(false);
   const [open, setOpen] = useState(false);
 
   useScrollPosition(
     ({ prevPos, currPos }: any) => {
       const display = currPos.y < prevPos.y && currPos.y < 200;
-      if (display !== hideOnScroll) setHideOnScroll(display);
+      if (display !== scrollEffects) setscrollEffects(display);
     },
-    [hideOnScroll],
+    [scrollEffects],
   );
 
   const toggle = () => setOpen(!open);
@@ -32,7 +32,7 @@ function Navbar({ history, location }: NavbarProps): React.ReactElement {
   const path = location.pathname.split('/')[1];
 
   return (
-    <Header data-testid='Navbar' {...{ hideOnScroll, open }}>
+    <Header data-testid='Navbar' {...{ scrollEffects, open }}>
       <h1 onClick={goHome}>Pokedex</h1>
       <Wrapper>
         <LogoContainer>

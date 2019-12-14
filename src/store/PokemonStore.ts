@@ -40,6 +40,10 @@ class PokemonStore {
     return this.Fetching;
   }
 
+  set fetching(value: boolean) {
+    this.Fetching = value;
+  }
+
   @computed get searching(): boolean {
     return this.Searching;
   }
@@ -62,6 +66,10 @@ class PokemonStore {
 
   @computed get lookup(): string {
     return this.Lookup;
+  }
+
+  @action clearPokemon(): void {
+    this.Pokemon = null;
   }
 
   set lookup(value: string) {

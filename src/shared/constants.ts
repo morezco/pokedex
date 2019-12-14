@@ -42,3 +42,15 @@ export const Subtitles: any = {
  */
 export const spriteURL = (id: string): string =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
+/**
+ * Gets an HD image of the specified pokemon from pokemondb.
+ * Warning: may not work on corporate networks.
+ * @param pokemon The pokemon's name
+ */
+export const pictureURL = (pokemon: string): string =>
+  `https://img.pokemondb.net/artwork/${pokemon.toLowerCase()}.jpg`;
+
+export interface MasterProps {
+  scrollEffects: boolean;
+}

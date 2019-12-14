@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { pictureURL } from 'shared/constants';
 
-import { Picture } from './styles';
+import { Container } from './styles';
 
-import { spriteURL } from 'shared/constants';
-import { extractId } from 'shared/helpers';
-
-export interface PokemonPictureProps {
-  url: string;
-  width?: number;
-  height?: number;
+interface PokemonPictureProps {
+  name: string;
 }
 
-export default function PokemonPicture({
-  url,
-  width,
-  height,
-}: PokemonPictureProps) {
-  const [error, setError] = useState(false);
-  return !error ? (
-    <Picture
-      alt={'Pokemon'}
-      width={width || '80'}
-      height={height || '80'}
-      onError={() => setError(true)}
-      src={spriteURL(extractId(url))}
-    />
-  ) : null;
+export default function PokemonPicture({ name }: PokemonPictureProps) {
+  return (
+    <Container>
+      <img alt={name} src={pictureURL(name)}></img>
+    </Container>
+  );
 }

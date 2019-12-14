@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 
 import { Content } from './styles';
@@ -13,6 +13,14 @@ interface PokemonDataBlob {
 }
 
 export default observer(function List() {
+  const { pokemon } = Pokemons;
+
+  useEffect(() => {
+    if (pokemon) {
+      Pokemons.clearPokemon();
+    }
+  }, [pokemon]);
+
   return (
     <Content>
       {Pokemons.results.map((result: PokemonDataBlob, i: number) => (

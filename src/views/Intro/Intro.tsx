@@ -10,8 +10,10 @@ import { Row, List } from 'components';
 
 import { Pokemons } from 'store';
 
-export default observer(function Intro() {
-  const hide: string = Pokemons.results.length ? '-700px 0px 200px 0px' : '0px';
+export default observer(function Intro({ scrollEffects }) {
+  const hide: string = Pokemons.results.length
+    ? '-600px 0px 200px 0px'
+    : '100px 0px 0px 0px';
 
   return (
     <Section>
@@ -30,7 +32,7 @@ export default observer(function Intro() {
           </figure>
         </Row>
       </Row>
-      <SearchLayer>
+      <SearchLayer {...{ scrollEffects: !scrollEffects }}>
         {!!Pokemons.results.length && (
           <p>
             {Pokemons.results.length}

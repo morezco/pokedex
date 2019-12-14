@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { observer } from 'mobx-react';
+import { extractId } from 'shared/helpers';
+import { spriteURL } from 'shared/constants';
 
 import { Section } from 'styles';
 
 import { Pokemons } from 'store';
 
-import { Row, Loading } from 'components';
+import { Row, Loading, PokemonPicture } from 'components';
 
 export interface PokemonDetailProps {
   match: any;
 }
 
-export default function PokemonDetail({ match }: PokemonDetailProps) {
-  const [masterLoading, setMasterLoading] = useState(true);
+export default observer(function PokemonDetail({ match }: PokemonDetailProps) {
   const { id } = match.params;
+  const { pokemon } = Pokemons;
 
   useEffect(() => {
     Pokemons.fetchPokemon(id);
@@ -20,13 +23,16 @@ export default function PokemonDetail({ match }: PokemonDetailProps) {
 
   return (
     <Section>
-      {masterLoading ? (
+      {!pokemon ? (
         <Row center>
           <Loading width='50px' />
         </Row>
       ) : (
-        <h1>{id}</h1>
+        <>
+          <PokemonPicture name={pokemon.name} />
+          <h1>{pokemon.name}</h1>
+        </>
       )}
     </Section>
   );
-}
+});

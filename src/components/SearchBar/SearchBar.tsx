@@ -9,24 +9,19 @@ import { Search } from 'components';
 export interface SearchbarProps {
   history: any;
   location: any;
+  scrollEffects?: boolean;
 }
 
-function Searchbar({ history, location }: SearchbarProps): React.ReactElement {
-  const [hideOnScroll, setHideOnScroll] = useState(true);
-
-  useScrollPosition(
-    ({ currPos }: any) => {
-      const display = currPos.y > -200;
-      if (display !== hideOnScroll) setHideOnScroll(display);
-    },
-    [hideOnScroll],
-  );
-
+function Searchbar({
+  history,
+  location,
+  scrollEffects,
+}: SearchbarProps): React.ReactElement {
   const hide = location.pathname !== '/';
   const goHome = () => history.push('/intro');
 
   return (
-    <Header data-testid='Topbar' {...{ hideOnScroll }}>
+    <Header data-testid='Topbar' {...{ scrollEffects }}>
       <h1 onClick={goHome}>Pokedex</h1>
       <Wrapper>
         <LogoContainer>
