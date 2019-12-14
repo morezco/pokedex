@@ -8,6 +8,8 @@ export interface RowProps {
   around?: boolean;
   children?: any;
   right?: any;
+  transform?: any;
+  margin?: string;
 }
 
 const RIGHT = (vertical: boolean) => css`
@@ -37,6 +39,12 @@ const AROUND = () => css`
 export const Element = styled.div<RowProps>`
   display: flex;
   width: 100%;
+  
+  ${({ margin }) => margin && `margin: ${margin};`}
+
+
+  transition: all 0.3s ease-in-out;
+  ${({ transform }) => transform && `transform: ${transform};`}
 
   ${({ vertical }) => vertical && COL()}
   ${({ center, vertical }) => center && CENTER(!!vertical)}

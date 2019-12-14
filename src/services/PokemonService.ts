@@ -26,7 +26,6 @@ class PokemonService {
       )
     ).data;
 
-    console.log(data);
     return data;
   }
 }

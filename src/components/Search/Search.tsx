@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import { observer } from 'mobx-react';
-import { useSmoothWindowScrollScrolling } from 'shared/hooks';
 
 import { Container, Input } from './styles';
 
@@ -33,8 +32,6 @@ export default observer(function Search() {
   useEffect(() => {
     ref.current!.focus();
   }, [ref]);
-
-  useSmoothWindowScrollScrolling(33, [Pokemons.lookup], 0, 500);
 
   return (
     <Container data-testid='SearchContainer'>

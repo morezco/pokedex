@@ -11,9 +11,11 @@ import { Row, List } from 'components';
 import { Pokemons } from 'store';
 
 export default observer(function Intro() {
+  const hide: string = Pokemons.results.length ? '-700px 0px 200px 0px' : '0px';
+
   return (
     <Section>
-      <Row>
+      <Row {...{ margin: hide }}>
         <Row vertical right>
           <h1 className='Title'>Intro</h1>
           <p>

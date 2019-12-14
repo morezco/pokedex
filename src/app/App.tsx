@@ -11,21 +11,13 @@ import Routes from 'routes';
 
 import { Pokemons } from 'store';
 
-declare global {
-  interface Window {
-    p: typeof Pokemons;
-  }
-}
-
-window.p = Pokemons;
-
 function App() {
   const [moveUpOnScroll, setMoveUpOnScroll] = useState(true);
   const [init, setInit] = useState(false);
 
   useEffect(() => {
     if (!init) {
-      window.p.loadCollection();
+      Pokemons.loadCollection();
       setInit(true);
     }
   }, [init]);
