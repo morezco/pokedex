@@ -2,7 +2,12 @@ import styled, { css } from 'styled-components';
 
 interface ContainerProps {
   hideOnScroll?: boolean;
+  hide?: boolean;
 }
+
+const SearchContainerHide = css`
+  transform: translateY(-500%);
+`;
 
 export const Header = styled.header<ContainerProps>`
   display: flex;
@@ -81,4 +86,8 @@ export const SearchContainer = styled.div<ContainerProps>`
 
   position: sticky;
   top: 100px;
+
+  transition: all 0.5s ease-in-out;
+
+  ${({ hide }) => hide && SearchContainerHide}
 `;

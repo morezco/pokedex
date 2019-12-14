@@ -11,7 +11,7 @@ export interface SearchbarProps {
   location: any;
 }
 
-function Searchbar({ history }: SearchbarProps): React.ReactElement {
+function Searchbar({ history, location }: SearchbarProps): React.ReactElement {
   const [hideOnScroll, setHideOnScroll] = useState(true);
 
   useScrollPosition(
@@ -22,6 +22,7 @@ function Searchbar({ history }: SearchbarProps): React.ReactElement {
     [hideOnScroll],
   );
 
+  const hide = location.pathname !== '/';
   const goHome = () => history.push('/intro');
 
   return (
@@ -31,7 +32,7 @@ function Searchbar({ history }: SearchbarProps): React.ReactElement {
         <LogoContainer>
           <h1 onClick={goHome}>Pokedex</h1>
         </LogoContainer>
-        <SearchContainer>
+        <SearchContainer {...{ hide }}>
           <Search />
         </SearchContainer>
       </Wrapper>
