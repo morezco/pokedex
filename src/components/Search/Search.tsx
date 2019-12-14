@@ -33,6 +33,18 @@ export default observer(function Search() {
     ref.current!.focus();
   }, [ref]);
 
+  useEffect(() => {
+    if (window.scrollY < 500) {
+      const step = (i: number) => {
+        if (i) {
+          window.scrollTo(0, window.scrollY + i);
+          window.requestAnimationFrame(step.bind(undefined, i - 1));
+        }
+      };
+      window.requestAnimationFrame(step.bind(undefined, 33));
+    }
+  }, [Pokemons.lookup]);
+
   return (
     <Container data-testid='SearchContainer'>
       <Input placeholder={'Pokémon'} ref={ref} onChange={changeHandler} />

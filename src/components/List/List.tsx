@@ -15,8 +15,8 @@ interface PokemonDataBlob {
 export default observer(function List() {
   return (
     <Content>
-      {Pokemons.results.map((result: PokemonDataBlob) => (
-        <Tile data={result} />
+      {Pokemons.results.map((result: PokemonDataBlob, i: number) => (
+        <Tile data={result} key={i} />
       ))}
     </Content>
   );
