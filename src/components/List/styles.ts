@@ -5,5 +5,7 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  margin: 60px 40px;
+  @media (min-width: 1000px) {
+    margin: 60px 40px;
+  }
 `;

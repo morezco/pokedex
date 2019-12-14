@@ -5,12 +5,10 @@ import Intro from './Intro';
 
 describe('The Intro view', () => {
   it('should render a title by default', () => {
-    const { getByText, getByTestId } = render(<Intro />);
-
+    const { getByText } = render(
+      <Intro scrollEffects={false} setNavStyle={() => {}} />,
+    );
     const IntroTitle = getByText('Intro');
-    const Search = getByTestId('SearchContainer');
-
     expect(IntroTitle).toBeInTheDocument();
-    expect(Search).toBeInTheDocument();
   });
 });

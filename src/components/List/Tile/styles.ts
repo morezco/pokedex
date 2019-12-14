@@ -7,7 +7,7 @@ export const Container = styled.div`
     max-width: 125px;
 
     display: flex;
-    flex: 1 0 25%;
+    flex: 1 0 21%;
     flex-direction: column;
 
     justify-content: center;
@@ -32,7 +32,7 @@ export const Container = styled.div`
     }
   
     @media (max-width: 1000px) {
-      min-width: 80%;
-      max-width: 80%;
+      min-width: 30%;
+      max-width: 30%;
     }
 `;

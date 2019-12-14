@@ -1,6 +1,5 @@
 import React from 'react';
 import Blob from './Blob/Blob';
-import { Stat } from './interfaces';
 
 export const Blobs = (Array: Array<string>) => (
   <div>
