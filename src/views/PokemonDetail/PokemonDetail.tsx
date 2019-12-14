@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
-import { nameLike } from 'shared/helpers';
-import { LayoutProps } from 'shared/constants';
+import { nameLike, extractId } from 'shared/helpers';
+import { LayoutProps, spriteURL } from 'shared/constants';
 import { Blobs, Pairs, List, Gender, StepCalc, Stats } from './functions';
 import { Stat } from './interfaces';
 
@@ -9,20 +9,21 @@ import { Section } from 'styles';
 
 import { Pokemons } from 'store';
 
-import { Row, Loading, PokemonPicture } from 'components';
+import { Row, Loading, PokemonPicture, PokemonSprite } from 'components';
 import Table, { TableProps } from './Table/Table';
 
 export interface PokemonDetailProps {
   match: any;
+  history: any;
 }
 
 export default observer(function PokemonDetail({
   match,
   setNavStyle,
+  history,
 }: PokemonDetailProps & LayoutProps) {
   const { id } = match.params;
   const { pokemon } = Pokemons;
-  console.log(pokemon);
 
   useEffect(() => {
     setNavStyle('height: 85px; position: relative;');
@@ -72,6 +73,20 @@ export default observer(function PokemonDetail({
     })),
   });
 
+  const EvolutionaryTable = (pokemon: any): TableProps => ({
+    title: 'Possible Evolutions',
+    data: pokemon.evolution.evolves_to.map((x: any) => ({
+      name: <PokemonSprite url={spriteURL(x.species.url)} />,
+      value: <p>{x.species.name}</p>,
+      act: () => {
+        Pokemons.clearPokemon();
+        history.push(`/pokemon/${extractId(x.species.url)}`);
+      },
+    })),
+  });
+
+  const evo = () => pokemon.evolution.evolves_to.length || null;
+
   return (
     <Section padding={'50px'}>
       {!pokemon ? (
@@ -91,6 +106,7 @@ export default observer(function PokemonDetail({
             <Row vertical>
               <Table {...PokedexTable(pokemon)} />
               <Table {...BreedingTable(pokemon)} />
+              {evo() && <Table {...EvolutionaryTable(pokemon)} />}
             </Row>
           </Row>
         </>

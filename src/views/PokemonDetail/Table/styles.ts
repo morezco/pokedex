@@ -21,6 +21,7 @@ export const Body = styled.tbody`
 
 export const Row = styled.tr`
   min-width: 100%;
+  ${({ onClick }) => onClick && 'cursor: pointer;'}
 `;
 
 export const Category = styled.td`
@@ -35,7 +36,7 @@ export const Category = styled.td`
 `;
 
 export const Value = styled.td`
-  width: 40%;
+  width: 70%;
 
   div {
     display: flex;

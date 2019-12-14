@@ -47,6 +47,27 @@ class PokemonService {
       )
     ).data?.map((x: any) => x.location_area.name);
 
+    let evolutionData = [data.evolution.chain];
+    let recurssion_limit = 0;
+
+    while (
+      !evolutionData.find((x: any) => x.species.name === data.name) &&
+      recurssion_limit < 100
+    ) {
+      evolutionData = evolutionData
+        .map((x: any) => x.evolves_to)
+        .reduce((acc, val) => acc.concat(val));
+      recurssion_limit++;
+    }
+
+    if (recurssion_limit === 100) {
+      data.evolution = [];
+    } else {
+      data.evolution = evolutionData.find(
+        (x: any) => x.species.name === data.name,
+      );
+    }
+
     return data;
   }
 }

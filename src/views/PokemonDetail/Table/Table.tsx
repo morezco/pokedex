@@ -5,6 +5,7 @@ import { Container, Layer, Body, Row, Category, Value } from './styles';
 export interface IBlob {
   name: string;
   value: any;
+  act?: any;
 }
 
 export interface TableProps {
@@ -19,7 +20,7 @@ export default function Table({ title, data }: TableProps) {
       <Layer>
         <Body>
           {data.map((blob: IBlob, i: number) => (
-            <Row key={i}>
+            <Row onClick={blob.act} key={i}>
               <Category>{blob.name}</Category>
               <Value>{blob.value}</Value>
             </Row>
