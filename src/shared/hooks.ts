@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -54,3 +54,25 @@ export function useScrollPosition(
     return () => window.removeEventListener('scroll', handleScroll);
   }, deps);
 }
+
+export const useSmoothWindowScrollScrolling = (
+  startingStepSize: number,
+  dependencies: Array<any>,
+  upperLimit?: number,
+  lowerLimit?: number,
+) => {
+  useEffect(() => {
+    if (
+      window.scrollY <= (lowerLimit || Infinity) &&
+      window.scrollY >= (upperLimit || 0)
+    ) {
+      const step = (i: number) => {
+        if (i) {
+          window.scrollTo(0, window.scrollY + i);
+          window.requestAnimationFrame(step.bind(undefined, i - 1));
+        }
+      };
+      window.requestAnimationFrame(step.bind(undefined, startingStepSize));
+    }
+  }, [...dependencies]);
+};
