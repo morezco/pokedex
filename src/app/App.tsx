@@ -20,13 +20,14 @@ declare global {
 window.p = Pokemons;
 
 function App() {
-  const [scrollEffects, setscrollEffects] = useState(false);
+  const [navHeight, setNavHeight] = useState(null);
+  const [scrollEffects, setScrollEffects] = useState(false);
   const [init, setInit] = useState(false);
 
   useScrollPosition(
     ({ currPos }: any) => {
       const display = currPos.y > -50;
-      if (display !== scrollEffects) setscrollEffects(display);
+      if (display !== scrollEffects) setScrollEffects(display);
     },
     [scrollEffects],
   );
@@ -40,9 +41,9 @@ function App() {
 
   return (
     <Router>
-      <SearchBar {...{ scrollEffects }} />
+      <SearchBar {...{ scrollEffects, height: navHeight }} />
       <AppContainer>
-        <Routes {...{ scrollEffects }} />
+        <Routes {...{ scrollEffects, setNavHeight }} />
       </AppContainer>
     </Router>
   );

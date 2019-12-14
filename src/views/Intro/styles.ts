@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { MasterProps } from 'shared/constants';
+import { LayoutProps } from 'shared/constants';
 
-export const SearchLayer = styled.div<MasterProps>`
+export const SearchLayer = styled.div<LayoutProps>`
   width: 100%;
   padding: 0px;
 

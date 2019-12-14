@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 interface ContainerProps {
   scrollEffects?: boolean;
   hide?: boolean;
+  height?: string;
 }
 
 const SearchContainerHide = css`
@@ -16,7 +17,7 @@ export const Header = styled.header<ContainerProps>`
 
   min-width: 100vw;
   max-width: 100vw;
-  height: 125px;
+  height: ${({ height }) => height || '125px'};
 
   margin: -8px;
 

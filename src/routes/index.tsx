@@ -1,5 +1,5 @@
 import React from 'react';
-import { MasterProps } from 'shared/constants';
+import { LayoutProps } from 'shared/constants';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -18,16 +18,16 @@ export const pokemonDetail = (id?: string | number): string =>
  */
 export const intro = (): string => '/';
 
-export default (masterProps: MasterProps) => (
+export default (layoutProps: LayoutProps) => (
   <Switch>
     <Route
       exact
       path={intro()}
-      render={() => <Views.Intro {...masterProps} />}
+      render={() => <Views.Intro {...layoutProps} />}
     />
     <Route
       path={pokemonDetail()}
-      render={props => <Views.PokemonDetail {...props} {...masterProps} />}
+      render={props => <Views.PokemonDetail {...props} {...layoutProps} />}
     />
     <Redirect exact to={intro()} />
   </Switch>

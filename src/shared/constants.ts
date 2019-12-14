@@ -51,6 +51,7 @@ export const spriteURL = (id: string): string =>
 export const pictureURL = (pokemon: string): string =>
   `https://img.pokemondb.net/artwork/${pokemon.toLowerCase()}.jpg`;
 
-export interface MasterProps {
+export interface LayoutProps {
   scrollEffects: boolean;
+  setNavHeight: Function;
 }

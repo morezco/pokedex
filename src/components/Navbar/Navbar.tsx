@@ -15,13 +15,13 @@ export interface NavbarProps {
 }
 
 function Navbar({ history, location }: NavbarProps): React.ReactElement {
-  const [scrollEffects, setscrollEffects] = useState(false);
+  const [scrollEffects, setScrollEffects] = useState(false);
   const [open, setOpen] = useState(false);
 
   useScrollPosition(
     ({ prevPos, currPos }: any) => {
       const display = currPos.y < prevPos.y && currPos.y < 200;
-      if (display !== scrollEffects) setscrollEffects(display);
+      if (display !== scrollEffects) setScrollEffects(display);
     },
     [scrollEffects],
   );

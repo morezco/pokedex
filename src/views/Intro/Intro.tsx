@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
+import { LayoutProps } from 'shared/constants';
 
 import { Section } from 'styles';
 import './Intro.css';
@@ -10,10 +11,17 @@ import { Row, List } from 'components';
 
 import { Pokemons } from 'store';
 
-export default observer(function Intro({ scrollEffects }) {
+export default observer(function Intro({
+  scrollEffects,
+  setNavHeight,
+}: LayoutProps) {
   const hide: string = Pokemons.results.length
     ? '-600px 0px 200px 0px'
     : '100px 0px 0px 0px';
+
+  useEffect(() => {
+    setNavHeight(null);
+  }, []);
 
   return (
     <Section>
@@ -32,7 +40,7 @@ export default observer(function Intro({ scrollEffects }) {
           </figure>
         </Row>
       </Row>
-      <SearchLayer {...{ scrollEffects: !scrollEffects }}>
+      <SearchLayer {...{ scrollEffects: !scrollEffects, setNavHeight }}>
         {!!Pokemons.results.length && (
           <p>
             {Pokemons.results.length}
