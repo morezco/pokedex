@@ -1,16 +1,18 @@
 import React from 'react';
 import { pictureURL } from 'shared/constants';
 
-import { Container } from './styles';
-
 interface PokemonPictureProps {
   name: string;
+  width?: string;
+  height?: string;
 }
 
-export default function PokemonPicture({ name }: PokemonPictureProps) {
+export default function PokemonPicture({
+  name,
+  width,
+  height,
+}: PokemonPictureProps) {
   return (
-    <Container>
-      <img alt={name} src={pictureURL(name)}></img>
-    </Container>
+    <img alt={name} width={width} height={height} src={pictureURL(name)}></img>
   );
 }

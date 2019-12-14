@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
-import { extractId } from 'shared/helpers';
-import { spriteURL, LayoutProps } from 'shared/constants';
+import { nameLike } from 'shared/helpers';
+import { LayoutProps } from 'shared/constants';
 
 import { Section } from 'styles';
 
 import { Pokemons } from 'store';
 
 import { Row, Loading, PokemonPicture } from 'components';
+import Table, { TableProps } from './Table/Table';
+import Blob from './Blob/Blob';
 
 export interface PokemonDetailProps {
   match: any;
@@ -19,16 +21,32 @@ export default observer(function PokemonDetail({
 }: PokemonDetailProps & LayoutProps) {
   const { id } = match.params;
   const { pokemon } = Pokemons;
-  console.clear();
   console.log(pokemon);
 
   useEffect(() => {
     setNavHeight('85px');
     Pokemons.fetchPokemon(id);
-  }, [id]);
+  }, [id, setNavHeight]);
+
+  const PokedexTable = (pokemon: any): TableProps => ({
+    title: 'Pokedéx Data',
+    data: [
+      { name: 'National no.', value: pokemon.id },
+      {
+        name: 'Type',
+        value: (
+          <div>
+            {pokemon.types.map((x: any, y: number) => (
+              <Blob key={y}>{x.type.name}</Blob>
+            ))}
+          </div>
+        ),
+      },
+    ],
+  });
 
   return (
-    <Section>
+    <Section padding={'50px'}>
       {!pokemon ? (
         <Row center>
           <Loading width='50px' />
@@ -36,13 +54,13 @@ export default observer(function PokemonDetail({
       ) : (
         <>
           <Row>
-            <Row vertical center>
-              <PokemonPicture name={pokemon.name} />
-              <h1>{pokemon.name}</h1>
-            </Row>
             <Row vertical right>
               <PokemonPicture name={pokemon.name} />
-              <h1>{pokemon.name}</h1>
+              <h1>{nameLike(pokemon.name)}</h1>
+            </Row>
+            <div style={{ height: '100%', width: '200px' }} />
+            <Row vertical>
+              <Table {...PokedexTable(pokemon)} />
             </Row>
           </Row>
         </>

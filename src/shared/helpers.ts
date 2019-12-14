@@ -25,3 +25,11 @@ export const extractId = (from: URL | string) => {
   const arr = from.href.split('/');
   return arr[arr.length - 2];
 };
+
+export const nameLike = (name: string) =>
+  name
+    .split(' ')
+    .map(
+      (x: string) =>
+        x.substring(0, 1).toUpperCase() + x.substring(1).toLowerCase(),
+    );
