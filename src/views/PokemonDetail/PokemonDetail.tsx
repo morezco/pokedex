@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import { nameLike } from 'shared/helpers';
 import { LayoutProps } from 'shared/constants';
+import { Blobs, Pairs, List } from './Functions';
 
 import { Section } from 'styles';
 
@@ -9,7 +10,6 @@ import { Pokemons } from 'store';
 
 import { Row, Loading, PokemonPicture } from 'components';
 import Table, { TableProps } from './Table/Table';
-import Blob from './Blob/Blob';
 
 export interface PokemonDetailProps {
   match: any;
@@ -32,17 +32,21 @@ export default observer(function PokemonDetail({
     title: 'Pokedéx Data',
     data: [
       { name: 'National no.', value: pokemon.id },
-      {
-        name: 'Type',
-        value: (
-          <div>
-            {pokemon.types.map((x: any, y: number) => (
-              <Blob key={y}>{x.type.name}</Blob>
-            ))}
-          </div>
-        ),
+      { name: 'Type', value: Blobs(pokemon.types) },
+      { name: 'Species', value: pokemon.species.name },
+      { name: 'Height', value: `${pokemon.height / 10}m` },
+      { name: 'Weight', value: `${pokemon.weight / 10}kg` },
+      { name: 'Abilities', value: Pairs(pokemon.abilities) },
+      pokemon.encounters.length && {
+        name: 'Encounters',
+        value: List(pokemon.encounters),
       },
     ],
+  });
+
+  const TrainingTable = (pokemon: any): TableProps => ({
+    title: 'Training',
+    data: [],
   });
 
   return (

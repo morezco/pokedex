@@ -10,9 +10,20 @@ class PokemonService {
   public async getOne(id: string | number): Promise<any> {
     const { data } = await api.get(`/pokemon/${id}`);
 
+    data.types = data.types.map((x: any) => x.type.name);
+
+    data.abilities = data.abilities?.map((x: any) => [
+      x.is_hidden ? 'hidden' : '',
+      x.ability.name,
+    ]);
+
     data.species = (
       await api.get(`/pokemon-species/${extractId(data.species.url)}`)
     ).data;
+
+    data.species.name = data.species?.genera?.find(
+      (x: any) => x.language.name === 'en',
+    )?.genus;
 
     data.evolution = (
       await api.get(
@@ -24,7 +35,7 @@ class PokemonService {
       await api.get(
         `/pokemon/${extractId(data.location_area_encounters)}/encounters`,
       )
-    ).data;
+    ).data?.map((x: any) => x.location_area.name);
 
     return data;
   }

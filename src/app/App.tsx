@@ -21,7 +21,7 @@ window.p = Pokemons;
 
 function App() {
   const [navHeight, setNavHeight] = useState(null);
-  const [scrollEffects, setScrollEffects] = useState(false);
+  const [scrollEffects, setScrollEffects] = useState(true);
   const [init, setInit] = useState(false);
 
   useScrollPosition(
