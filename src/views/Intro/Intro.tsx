@@ -1,11 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
+import { Section } from 'styles';
 import './Intro.css';
-import { Section, SearchLayer } from './styles';
+import { SearchLayer } from './styles';
 import { eevee } from 'assets';
 
-import { Row, Search, List } from 'components';
+import { Row, List } from 'components';
 
 import { Pokemons } from 'store';
 
@@ -31,7 +32,7 @@ export default observer(function Intro() {
         {!!Pokemons.results.length && (
           <p>
             {Pokemons.results.length}
-            {Pokemons.results.length === 50 && '+'} resultados
+            {Pokemons.results.length === 50 && '+'} results
           </p>
         )}
       </SearchLayer>

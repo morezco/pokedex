@@ -35,3 +35,10 @@ export const Subtitles: any = {
   Intro:
     "The Pokémon series has had eight generational groups of games, spanning across nearly three decades and still ongoing. In this website, you'll find a knowledge base for all of your Pokémon needs.",
 };
+
+/**
+ * Gets a PokéAPI pokemon ID and returns the full GitHub URL for its sprite.
+ * @param id A pokemon ID from PokéAPI.
+ */
+export const spriteURL = (id: string): string =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
