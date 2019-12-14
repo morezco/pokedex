@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   font: 1.6em Poppins;
+  width: 100%;
 `;
 
 export const Layer = styled.table`

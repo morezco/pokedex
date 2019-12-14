@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 interface ContainerProps {
   scrollEffects?: boolean;
   hide?: boolean;
-  height?: string;
+  styling?: string;
 }
 
 const SearchContainerHide = css`
@@ -17,7 +17,7 @@ export const Header = styled.header<ContainerProps>`
 
   min-width: 100vw;
   max-width: 100vw;
-  height: ${({ height }) => height || '125px'};
+  height: 125px;
 
   margin: -8px;
 
@@ -40,7 +40,8 @@ export const Header = styled.header<ContainerProps>`
     }
   }
 
-  ${({ scrollEffects }) =>
+  ${({ scrollEffects, styling }) =>
+    !styling &&
     !scrollEffects &&
     css`
       background-color: red;
@@ -48,6 +49,8 @@ export const Header = styled.header<ContainerProps>`
         color: white;
       }
     `}
+
+  ${({ styling }) => styling};
 `;
 
 export const Wrapper = styled.div`

@@ -9,20 +9,20 @@ export interface SearchbarProps {
   history: any;
   location: any;
   scrollEffects?: boolean;
-  height?: string;
+  styling?: string;
 }
 
 function Searchbar({
   history,
   location,
   scrollEffects,
-  height,
+  styling,
 }: SearchbarProps): React.ReactElement {
   const hide = location.pathname !== '/';
   const goHome = () => history.push('/intro');
 
   return (
-    <Header data-testid='Topbar' {...{ scrollEffects, height }}>
+    <Header data-testid='Topbar' {...{ scrollEffects, styling }}>
       <h1 onClick={goHome}>Pokedex</h1>
       <Wrapper>
         <LogoContainer>

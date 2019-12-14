@@ -17,6 +17,12 @@ class PokemonService {
       x.ability.name,
     ]);
 
+    data.stats = data.stats.map((x: any) => ({
+      base: x.base_stat,
+      effort: x.effort,
+      name: x.stat.name,
+    }));
+
     data.species = (
       await api.get(`/pokemon-species/${extractId(data.species.url)}`)
     ).data;
@@ -24,6 +30,10 @@ class PokemonService {
     data.species.name = data.species?.genera?.find(
       (x: any) => x.language.name === 'en',
     )?.genus;
+
+    data.growth_rate = data.species.growth_rate.name;
+
+    data.species.egg_groups = data.species.egg_groups.map((x: any) => x.name);
 
     data.evolution = (
       await api.get(
