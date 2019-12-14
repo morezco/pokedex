@@ -21,7 +21,7 @@ export default observer(function Intro({
 
   useEffect(() => {
     setNavHeight(null);
-  }, []);
+  }, [setNavHeight]);
 
   return (
     <Section>

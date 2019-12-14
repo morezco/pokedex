@@ -19,6 +19,8 @@ export default observer(function PokemonDetail({
 }: PokemonDetailProps & LayoutProps) {
   const { id } = match.params;
   const { pokemon } = Pokemons;
+  console.clear();
+  console.log(pokemon);
 
   useEffect(() => {
     setNavHeight('85px');

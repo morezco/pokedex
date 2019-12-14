@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useScrollPosition } from 'shared/hooks';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import { Header, Wrapper, LogoContainer, SearchContainer } from './styles';
