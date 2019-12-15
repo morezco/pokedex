@@ -91,7 +91,7 @@ export default observer(function PokemonDetail({
     })),
   });
 
-  const evo = () => pokemon.evolution.evolves_to.length || null;
+  const evo = () => pokemon.evolution?.evolves_to.length || null;
 
   return (
     <Section padding={'50px'}>

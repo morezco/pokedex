@@ -24,7 +24,7 @@ export default function Stats({ stat }: StatsProps) {
   return (
     <Container>
       <Layer>
-        <Bar colour={statColour(stat)} />
+        <Bar width={(stat / 130) * 100 + '%'} colour={statColour(stat)} />
       </Layer>
       <p>{stat}</p>
     </Container>

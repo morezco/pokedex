@@ -7,16 +7,14 @@ export const Container = styled.div`
 
 export const Layer = styled.table`
   font: 0.8em Poppins;
+
+  width: 100%;
 `;
 
 export const Header = styled.thead``;
 
 export const Body = styled.tbody`
   min-width: 100%;
-
-  hr {
-    min-width: 300%;
-  }
 `;
 
 export const Row = styled.tr`

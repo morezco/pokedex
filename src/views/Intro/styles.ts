@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { LayoutProps } from 'shared/constants';
 
 export const SearchLayer = styled.div<LayoutProps>`
-  width: 100%;
   padding: 0px;
   max-height: 40px;
 
@@ -10,14 +9,25 @@ export const SearchLayer = styled.div<LayoutProps>`
   justify-content: flex-end;
   align-self: flex-start;
 
-  position: sticky;
-  top: 50px !important;
   z-index: 1000;
+
+  @media (min-width: 1000px) {
+    position: sticky;
+    top: 50px !important;
+
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 1000px) {
+    position: fixed;
+    top: 65px;
+    right: 0px;
+    width: 150px;
+  }
 
   font-size: 1em;
   color: #999;
-
-  margin-left: 10px;
 
   p {
     width: 200px;

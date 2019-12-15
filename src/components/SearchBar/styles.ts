@@ -49,7 +49,7 @@ export const Header = styled.header<ContainerProps>`
     !minimiseNav &&
     !scrollEffects &&
     css`
-      background-color: red;
+      background-color: #fd3333ee;
       h1 {
         color: white;
       }

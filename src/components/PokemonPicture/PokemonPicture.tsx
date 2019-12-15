@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { pictureURL } from 'shared/constants';
 
 interface PokemonPictureProps {
@@ -12,7 +12,14 @@ export default function PokemonPicture({
   width,
   height,
 }: PokemonPictureProps) {
-  return (
-    <img alt={name} width={width} height={height} src={pictureURL(name)}></img>
-  );
+  const [err, setErr] = useState(false);
+  return !err ? (
+    <img
+      onError={() => setErr(true)}
+      alt={name}
+      width={width}
+      height={height}
+      src={pictureURL(name)}
+    ></img>
+  ) : null;
 }
