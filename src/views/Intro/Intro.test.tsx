@@ -6,7 +6,7 @@ import Intro from './Intro';
 describe('The Intro view', () => {
   it('should render a title by default', () => {
     const { getByText } = render(
-      <Intro scrollEffects={false} setNavStyle={() => {}} />,
+      <Intro scrollEffects={false} setMinimiseNav={() => {}} />,
     );
     const IntroTitle = getByText('Intro');
     expect(IntroTitle).toBeInTheDocument();

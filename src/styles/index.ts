@@ -22,8 +22,6 @@ export const Section = styled.section<SectionProps>`
   width: 80%;
   ${({ padding }) => padding && sectionPadding(padding)}
 
-  overflow: hidden;
-
   h1 {
     font: 3em Poppins;
     margin: 0px;

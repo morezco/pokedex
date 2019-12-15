@@ -19,16 +19,16 @@ export interface PokemonDetailProps {
 
 export default observer(function PokemonDetail({
   match,
-  setNavStyle,
+  setMinimiseNav,
   history,
 }: PokemonDetailProps & LayoutProps) {
   const { id } = match.params;
   const { pokemon } = Pokemons;
 
   useEffect(() => {
-    setNavStyle('height: 85px; position: relative;');
+    setMinimiseNav(true);
     Pokemons.fetchPokemon(id);
-  }, [id, setNavStyle]);
+  }, [id, setMinimiseNav]);
 
   const PokedexTable = (pokemon: any): TableProps => ({
     title: 'Pokedéx Data',

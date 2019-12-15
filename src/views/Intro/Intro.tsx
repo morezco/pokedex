@@ -13,15 +13,15 @@ import { Pokemons } from 'store';
 
 export default observer(function Intro({
   scrollEffects,
-  setNavStyle,
+  setMinimiseNav,
 }: LayoutProps) {
   const hide: string = Pokemons.results.length
     ? '-600px 0px 200px 0px'
     : '100px 0px 0px 0px';
 
   useEffect(() => {
-    setNavStyle(null);
-  }, [setNavStyle]);
+    setMinimiseNav(false);
+  }, [setMinimiseNav]);
 
   return (
     <Section>
@@ -40,7 +40,7 @@ export default observer(function Intro({
           </figure>
         </Row>
       </Row>
-      <SearchLayer {...{ scrollEffects: !scrollEffects, setNavStyle }}>
+      <SearchLayer {...{ scrollEffects: !scrollEffects, setMinimiseNav }}>
         {!!Pokemons.results.length && (
           <p>
             {Pokemons.results.length}

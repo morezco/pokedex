@@ -3,11 +3,16 @@ import styled, { css } from 'styled-components';
 interface ContainerProps {
   scrollEffects?: boolean;
   hide?: boolean;
-  styling?: string;
+  minimiseNav?: boolean;
 }
 
 const SearchContainerHide = css`
   transform: translateY(-500%);
+`;
+
+const minimisedNav = css`
+  position: relative;
+  height: 85px;
 `;
 
 export const Header = styled.header<ContainerProps>`
@@ -40,8 +45,8 @@ export const Header = styled.header<ContainerProps>`
     }
   }
 
-  ${({ scrollEffects, styling }) =>
-    !styling &&
+  ${({ scrollEffects, minimiseNav }) =>
+    !minimiseNav &&
     !scrollEffects &&
     css`
       background-color: red;
@@ -50,7 +55,7 @@ export const Header = styled.header<ContainerProps>`
       }
     `}
 
-  ${({ styling }) => styling};
+  ${({ minimiseNav }) => minimiseNav && minimisedNav};
 `;
 
 export const Wrapper = styled.div`

@@ -53,5 +53,5 @@ export const pictureURL = (pokemon: string): string =>
 
 export interface LayoutProps {
   scrollEffects: boolean;
-  setNavStyle: Function;
+  setMinimiseNav: Function;
 }

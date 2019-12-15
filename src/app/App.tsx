@@ -20,7 +20,7 @@ declare global {
 window.p = Pokemons;
 
 function App() {
-  const [navStyle, setNavStyle] = useState(null);
+  const [minimiseNav, setMinimiseNav] = useState(false);
   const [scrollEffects, setScrollEffects] = useState(true);
   const [init, setInit] = useState(false);
 
@@ -41,9 +41,9 @@ function App() {
 
   return (
     <Router>
-      <SearchBar {...{ scrollEffects, styling: navStyle }} />
+      <SearchBar {...{ scrollEffects, minimiseNav }} />
       <AppContainer>
-        <Routes {...{ scrollEffects, setNavStyle }} />
+        <Routes {...{ scrollEffects, setMinimiseNav }} />
       </AppContainer>
     </Router>
   );
