@@ -36,7 +36,7 @@ export default observer(function Intro({
         </Row>
         <Row vertical>
           <figure>
-            <img alt='eevee' src={eevee} />
+            <img className='eevee' alt='eevee' src={eevee} />
           </figure>
         </Row>
       </Row>

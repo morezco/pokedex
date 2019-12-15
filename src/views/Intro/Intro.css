@@ -1,7 +1,12 @@
 @media (max-width: 1000px) {
   figure {
     z-index: -1;
-    margin-top: -120px;
+    margin-top: -420px;
+    margin-bottom: 250px;
+  }
+
+  .eevee {
+    max-width: 200px;
   }
 }
 

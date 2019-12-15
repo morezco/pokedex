@@ -11,7 +11,6 @@ export const AppContainer = styled.main<AppContainerProps>`
   justify-content: center;
 
   @media (max-width: 1000px) {
-    margin-top: 120px;
     overflow: hidden;
   }
 `;
