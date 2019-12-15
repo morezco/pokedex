@@ -11,14 +11,6 @@ import Routes from 'routes';
 
 import { Pokemons } from 'store';
 
-declare global {
-  interface Window {
-    p: any;
-  }
-}
-
-window.p = Pokemons;
-
 function App() {
   const [minimiseNav, setMinimiseNav] = useState(false);
   const [scrollEffects, setScrollEffects] = useState(true);

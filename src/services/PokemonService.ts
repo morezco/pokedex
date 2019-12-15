@@ -73,7 +73,7 @@ class PokemonService {
       }
       return data;
     } catch (oof) {
-      return null;
+      return -1;
     }
   }
 }
