@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import { nameLike, extractId } from 'shared/helpers';
 import { LayoutProps, spriteURL } from 'shared/constants';
-import { Blobs, Pairs, List, Gender, StepCalc, Stats } from './functions';
+import Components from './components';
 import { Stat } from './interfaces';
 
 import { Section } from 'styles';
@@ -34,14 +34,14 @@ export default observer(function PokemonDetail({
     title: 'Pokedéx Data',
     data: [
       { name: 'National no.', value: pokemon.id },
-      { name: 'Type', value: Blobs(pokemon.types) },
+      { name: 'Type', value: <Components.Blob arr={pokemon.types} /> },
       { name: 'Species', value: pokemon.species.name },
       { name: 'Height', value: `${pokemon.height / 10}m` },
       { name: 'Weight', value: `${pokemon.weight / 10}kg` },
-      { name: 'Abilities', value: Pairs(pokemon.abilities) },
+      { name: 'Abilities', value: <Components.Pair arr={pokemon.abilities} /> },
       pokemon.encounters.length && {
         name: 'Encounters',
-        value: List(pokemon.encounters),
+        value: <Components.List arr={pokemon.encounters} />,
       },
     ],
   });
@@ -60,8 +60,14 @@ export default observer(function PokemonDetail({
     title: 'Breeding',
     data: [
       { name: 'Egg Groups', value: pokemon.species.egg_groups.join(', ') },
-      { name: 'Gender', value: Gender(pokemon.species.gender_rate) },
-      { name: 'Egg cycles', value: StepCalc(pokemon.species.hatch_counter) },
+      {
+        name: 'Gender',
+        value: <Components.Gender rate={pokemon.species.gender_rate} />,
+      },
+      {
+        name: 'Egg cycles',
+        value: <Components.Steps cycles={pokemon.species.hatch_counter} />,
+      },
     ],
   });
 
@@ -69,7 +75,7 @@ export default observer(function PokemonDetail({
     title: 'Base stats',
     data: pokemon.stats.map((stat: Stat) => ({
       name: stat.name,
-      value: Stats(stat.base),
+      value: <Components.Stats stat={stat.base} />,
     })),
   });
 
@@ -99,12 +105,12 @@ export default observer(function PokemonDetail({
             <Row vertical right>
               <PokemonPicture name={pokemon.name} />
               <h1>{nameLike(pokemon.name)}</h1>
+              <Table {...PokedexTable(pokemon)} />
               <Table {...TrainingTable(pokemon)} />
-              <Table {...StatsTable(pokemon)} />
             </Row>
             <div style={{ height: '100%', width: '200px' }} />
             <Row vertical>
-              <Table {...PokedexTable(pokemon)} />
+              <Table {...StatsTable(pokemon)} />
               <Table {...BreedingTable(pokemon)} />
               {evo() && <Table {...EvolutionaryTable(pokemon)} />}
             </Row>
