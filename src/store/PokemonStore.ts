@@ -10,6 +10,10 @@ class PokemonStore {
   @observable private Pokemon: any;
   @observable private Lookup: string = '';
 
+  public constructor() {
+    this.loadCollection();
+  }
+
   @action public async search(
     lens: (value: any, index: number, array: any[]) => any,
   ) {
@@ -68,12 +72,12 @@ class PokemonStore {
     return this.Lookup;
   }
 
-  @action clearPokemon(): void {
-    this.Pokemon = null;
-  }
-
   set lookup(value: string) {
     this.Lookup = value;
+  }
+
+  @action clearPokemon(): void {
+    this.Pokemon = null;
   }
 }
 

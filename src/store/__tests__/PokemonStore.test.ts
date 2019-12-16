@@ -7,7 +7,7 @@ import { ditto, pokemonsCollection } from 'tests/mocks';
 const { REACT_APP_API_URL } = process.env;
 
 const pokemons = (uri: string) => {
-  let pieces = uri
+  const pieces = uri
     .split('/')
     .slice(3)
     .map(piece =>
@@ -18,7 +18,7 @@ const pokemons = (uri: string) => {
 };
 
 const pokemon = (uri: string) => {
-  let pieces = uri
+  const pieces = uri
     .split('/')
     .slice(3)
     .map(piece =>
@@ -45,7 +45,7 @@ describe('The Pokemon Store', () => {
     }, 2000);
   });
 
-  it('should be able to get an specific pokemon', done => {
+  it('should be able to get a specific pokemon', done => {
     PokemonStore.fetchPokemon('ditto');
     expect(PokemonStore.fetching).toBe(true);
     setTimeout(() => {

@@ -6,8 +6,8 @@ import { Header, Wrapper, LogoContainer, SearchContainer } from './styles';
 import { Search } from 'components';
 
 export interface SearchbarProps {
-  history: any;
-  location: any;
+  history?: any;
+  location?: any;
   scrollEffects?: boolean;
   minimiseNav?: boolean;
 }
@@ -18,12 +18,14 @@ function Searchbar({
   scrollEffects,
   minimiseNav,
 }: SearchbarProps): React.ReactElement {
-  const hide = location.pathname !== '/';
-  const goHome = () => history.push('/intro');
+  const hide = location && location.pathname !== '/';
+  const goHome = history && (() => history.push('/intro'));
 
   return (
-    <Header data-testid='Topbar' {...{ scrollEffects, minimiseNav }}>
-      <h1 onClick={goHome}>Pokedex</h1>
+    <Header {...{ scrollEffects, minimiseNav }}>
+      <h1 data-testid='Topbar' onClick={goHome}>
+        Pokedex
+      </h1>
       <Wrapper>
         <LogoContainer>
           <h1 onClick={goHome}>Pokedex</h1>

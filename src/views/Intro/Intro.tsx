@@ -27,11 +27,14 @@ export default observer(function Intro({
     <Section>
       <Row {...{ margin: hide }}>
         <Row vertical right>
-          <h1 className='Title'>Intro</h1>
+          <h1 data-testid='adimo' className='Title'>
+            Intro
+          </h1>
           <p>
             The Pokémon series has had eight generational groups of games,
             spanning across nearly three decades and still ongoing. In this
-            website, you'll find a knowledge base for all of your Pokémon needs.
+            website, you&#39;ll find a knowledge base for all of your Pokémon
+            needs.
           </p>
         </Row>
         <Row vertical>
@@ -42,14 +45,18 @@ export default observer(function Intro({
       </Row>
       <SearchLayer {...{ scrollEffects: !scrollEffects, setMinimiseNav }}>
         {!!Pokemons.results.length && (
-          <p>
+          <p data-testid='resultcount'>
             {Pokemons.results.length}
             {Pokemons.results.length === 50 && '+'} results
           </p>
         )}
-        {!Pokemons.results.length && Pokemons.lookup && <p>No results</p>}
+        {!Pokemons.results.length && Pokemons.lookup && (
+          <p data-testid='noresultwarning'>No results</p>
+        )}
       </SearchLayer>
-      {Pokemons.lookup && <List />}
+      <div data-testid='grid'>
+        {Pokemons.lookup && Pokemons.results.length && <List />}
+      </div>
     </Section>
   );
 });
