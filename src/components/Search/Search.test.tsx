@@ -5,7 +5,9 @@ import Search from './Search';
 import { Input } from './styles';
 
 import { Pokemons } from 'store';
-import { Clean, ExtractProperty } from './functions';
+
+import { changeHandler } from './handlers';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 describe('The Search Bar', () => {
   const wrapper = mount(<Search />);
@@ -17,11 +19,23 @@ describe('The Search Bar', () => {
     expect(Pokemons.lookup).toBe('pikachu');
   });
 
-  it('should be able to normalise user input', () => {
-    expect(Clean('Ádimo pötestas')).toBe('adimo potestas');
-  });
+  it('should signal the fetching status of the Pokemon Store with a font awesome icon', done => {
+    const icon = wrapper.find(FontAwesomeIcon);
 
-  it('should be able to extract queryable data from objects', () => {
-    expect(ExtractProperty({ name: 'Pikachu' })).toBe('pikachu');
+    // Pokemons.loadCollection();
+    setTimeout(() => {
+      // console.log(icon.debug());
+      expect(icon.prop('spin')).toBe(true);
+      done();
+    }, 1000);
+  });
+});
+
+describe('The change handler of the Search component', () => {
+  it('should properly extract the lookup value and set it into the Pokemons Store', () => {
+    changeHandler({
+      target: { value: 'test' },
+    }),
+      expect(Pokemons.lookup).toBe('test');
   });
 });

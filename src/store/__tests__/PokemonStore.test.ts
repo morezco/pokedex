@@ -29,10 +29,12 @@ const pokemon = (uri: string) => {
 };
 
 nock(String(REACT_APP_API_URL))
+  .get(pokemon)
+  .reply(200, ditto)
   .get(pokemons)
   .reply(200, pokemonsCollection)
-  .get(pokemon)
-  .reply(200, ditto);
+  .get(/.*/)
+  .reply(200, pokemonsCollection);
 
 describe('The Pokemon Store', () => {
   it('should be able to fetch pokemons', done => {

@@ -4,4 +4,4 @@ export const Clean = (x: string) =>
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
 
-export const ExtractProperty = (x: any) => Clean(x.name || x.url || '');
+export const ExtractProperty = (x: any) => Clean(x?.name || x?.url || '');

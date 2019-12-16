@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/camelcase */
+
 import { extractId } from 'shared/helpers';
 import api from 'api';
 
@@ -12,17 +14,17 @@ class PokemonService {
       const { data } = await api.get(`/pokemon/${id}`);
 
       try {
-        data.types = data.types.map((x: any) => x.type.name);
+        data.types = data.types.map(({ type }: any) => type.name);
 
-        data.abilities = data.abilities?.map((x: any) => [
-          x.is_hidden ? 'hidden' : '',
-          x.ability.name,
+        data.abilities = data.abilities?.map(({ is_hidden, ability }: any) => [
+          is_hidden ? 'hidden' : '',
+          ability.name,
         ]);
 
-        data.stats = data.stats.map((x: any) => ({
-          base: x.base_stat,
-          effort: x.effort,
-          name: x.stat.name,
+        data.stats = data.stats.map(({ base_stat, effort, stat }: any) => ({
+          base: base_stat,
+          effort: effort,
+          name: stat.name,
         }));
 
         data.species = (
@@ -36,7 +38,7 @@ class PokemonService {
         data.growth_rate = data.species.growth_rate.name;
 
         data.species.egg_groups = data.species.egg_groups.map(
-          (x: any) => x.name,
+          ({ name }: any) => name,
         );
 
         data.evolution = (
@@ -49,20 +51,22 @@ class PokemonService {
           await api.get(
             `/pokemon/${extractId(data.location_area_encounters)}/encounters`,
           )
-        ).data?.map((x: any) => x.location_area.name);
+        ).data?.map(({ location_area }: any) => location_area.name);
 
         let evolutionData = [data.evolution.chain];
         let recurssion_limit = 0;
 
         while (
-          !evolutionData.find((x: any) => x.species.name === data.name) &&
+          !evolutionData.find(
+            ({ species }: any) => species.name === data.name,
+          ) &&
           recurssion_limit < 100 &&
           evolutionData instanceof Array &&
           evolutionData[0] &&
           evolutionData[0].evolves_to
         ) {
           evolutionData = evolutionData
-            .map((x: any) => x.evolves_to)
+            .map(({ evolves_to }: any) => evolves_to)
             .reduce((acc, val) => acc.concat(val));
           recurssion_limit++;
         }
@@ -71,7 +75,7 @@ class PokemonService {
           data.evolution = [];
         } else {
           data.evolution = evolutionData.find(
-            (x: any) => x.species.name === data.name,
+            ({ species }: any) => species.name === data.name,
           );
         }
         return data;

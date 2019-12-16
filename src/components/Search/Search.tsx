@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { observer } from 'mobx-react';
-import { Clean, ExtractProperty } from './functions';
+import { changeHandler } from './handlers';
 
 import { Container, Input } from './styles';
 
@@ -10,17 +10,6 @@ import { faSearch, faCog } from '@fortawesome/free-solid-svg-icons';
 import { Pokemons } from 'store';
 
 export default observer(function Search() {
-  const changeHandler = (e: any) => {
-    const {
-      target: { value },
-    } = e;
-
-    Pokemons.search((x: any) =>
-      value ? ExtractProperty(x).includes(Clean(value)) : false,
-    );
-    Pokemons.lookup = value || '';
-  };
-
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {

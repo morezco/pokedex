@@ -5,7 +5,7 @@
  */
 export const Sum = (
   array: Array<number>,
-  mod: Function = (x: Array<Number>) => x,
+  mod: Function = (x: Array<number>) => x,
 ) => {
   let res = 0;
   for (let i = 0; i < array.length; i++) {
@@ -32,4 +32,5 @@ export const nameLike = (name: string) =>
     .map(
       (x: string) =>
         x.substring(0, 1).toUpperCase() + x.substring(1).toLowerCase(),
-    );
+    )
+    .join(' ');

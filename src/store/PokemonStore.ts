@@ -1,6 +1,8 @@
 import { observable, action, computed, toJS } from 'mobx';
 import Service from 'services/PokemonService';
 
+import { Clean, ExtractProperty } from 'shared/storeSearch';
+
 class PokemonStore {
   @observable private Collection: Array<any> = [];
   @observable private Results: Array<any> = [];
@@ -14,9 +16,13 @@ class PokemonStore {
     this.loadCollection();
   }
 
-  @action public async search(
-    lens: (value: any, index: number, array: any[]) => any,
-  ) {
+  @action public async search(lens: any) {
+    if (typeof lens === 'string') {
+      this.lookup = lens;
+      lens = (value: any) =>
+        value ? ExtractProperty(value).includes(Clean(value)) : false;
+    }
+
     this.Searching = true;
     if (this.Collection && toJS(this.Collection) instanceof Array) {
       this.Results = toJS(this.Collection)
@@ -30,7 +36,11 @@ class PokemonStore {
 
   @action public async loadCollection() {
     this.Fetching = true;
-    this.Collection = await Service.getAll();
+    try {
+      this.Collection = await Service.getAll();
+    } catch (oof) {
+      console.log(oof);
+    }
     this.Fetching = false;
   }
 
