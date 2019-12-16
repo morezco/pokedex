@@ -46,7 +46,7 @@ export default observer(function PokemonDetail({
       ) : (
         <Row>
           <Row vertical right>
-            <PokemonPicture name={pokemon.name} />
+            <PokemonPicture id={pokemon.id} name={pokemon.name} />
             <h1>{nameLike(pokemon.name)}</h1>
             <Table {...PokedexTable(pokemon)} />
             <Table {...TrainingTable(pokemon)} />

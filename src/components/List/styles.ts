@@ -6,6 +6,6 @@ export const Content = styled.div`
   justify-content: center;
 
   @media (min-width: 1000px) {
-    margin: 60px 40px;
+    margin: 80px 40px;
   }
 `;
