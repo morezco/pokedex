@@ -18,7 +18,7 @@ export const pokemonDetail = (id?: string | number): string =>
  */
 export const intro = (): string => '/';
 
-export default (layoutProps: LayoutProps) => (
+export const Routes = (layoutProps: LayoutProps) => (
   <Switch>
     <Route
       exact
@@ -32,3 +32,5 @@ export default (layoutProps: LayoutProps) => (
     <Redirect exact to={intro()} />
   </Switch>
 );
+
+export default Routes;
