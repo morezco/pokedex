@@ -9,7 +9,7 @@ export default function Loading(
   props: LoadingContainerProps,
 ): React.ReactElement {
   return (
-    <Container {...props}>
+    <Container data-testid='Loading' {...props}>
       <FontAwesomeIcon icon={cog} spin size={'3x'} />
     </Container>
   );
