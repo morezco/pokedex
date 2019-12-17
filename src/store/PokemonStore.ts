@@ -47,7 +47,13 @@ class PokemonStore {
 
   @action public async fetchPokemon(id: string | number) {
     this.Fetching = true;
-    this.Pokemon = await Service.getOne(id);
+    try {
+      this.Pokemon = await Service.getOne(id);
+    } catch (oof) {
+      if (!TESTING) {
+        console.log(oof);
+      }
+    }
     this.Fetching = false;
   }
 

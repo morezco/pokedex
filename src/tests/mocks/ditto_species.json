@@ -1,23 +1,22 @@
 {
   "base_happiness": 70,
-  "capture_rate": 35,
+  "capture_rate": 190,
   "color": {
-    "name": "purple",
-    "url": "https://pokeapi.co/api/v2/pokemon-color/7/"
+    "name": "yellow",
+    "url": "https://pokeapi.co/api/v2/pokemon-color/10/"
   },
   "egg_groups": [
-    {
-      "name": "ditto",
-      "url": "https://pokeapi.co/api/v2/egg-group/13/"
-    }
+    { "name": "fairy", "url": "https://pokeapi.co/api/v2/egg-group/6/" },
+    { "name": "ground", "url": "https://pokeapi.co/api/v2/egg-group/5/" }
   ],
-  "evolution_chain": {
-    "url": "https://pokeapi.co/api/v2/evolution-chain/66/"
+  "evolution_chain": { "url": "https://pokeapi.co/api/v2/evolution-chain/10/" },
+  "evolves_from_species": {
+    "name": "pichu",
+    "url": "https://pokeapi.co/api/v2/pokemon-species/172/"
   },
-  "evolves_from_species": null,
   "flavor_text_entries": [
     {
-      "flavor_text": "可以变身成任何东西，\n但好像每只百变怪都有着自己\n擅长和不擅长变形的东西。",
+      "flavor_text": "有积存电力的特质。\n在皮卡丘群居的森林里\n会落雷不断，十分危险。",
       "language": {
         "name": "zh-Hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
@@ -28,7 +27,7 @@
       }
     },
     {
-      "flavor_text": "どんなものにも　変身　できるが\nメタモンごとに　得意な　ものと\n苦手な　ものが　あるらしい。",
+      "flavor_text": "電気を　ため込む　性質。\nピカチュウが　群れて　暮らす　森は\n落雷が　絶えず　危険だ。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -39,7 +38,7 @@
       }
     },
     {
-      "flavor_text": "While it can transform into anything, each Ditto\napparently has its own strengths and\nweaknesses when it comes to transformations.",
+      "flavor_text": "Its nature is to store up electricity. Forests\nwhere nests of Pikachu live are dangerous,\nsince the trees are so often struck by lightning.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -50,7 +49,7 @@
       }
     },
     {
-      "flavor_text": "Ditto è in grado di assumere le sembianze di\nqualsiasi cosa. Ogni esemplare riesce meglio\nin alcune trasformazioni piuttosto che in altre.",
+      "flavor_text": "Accumula naturalmente elettricità. I boschi\npopolati da gruppi di Pikachu sono pericolosi\nperché continuamente colpiti dai fulmini.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -61,7 +60,7 @@
       }
     },
     {
-      "flavor_text": "Los Ditto pueden adoptar cualquier aspecto,\npero cada individuo tiene un objeto de imitación\nque se le da mejor que otros.",
+      "flavor_text": "Acumulan electricidad de forma natural. Los\nbosques donde habitan en grupos están en\npeligro constante de ser alcanzados por rayos.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -72,7 +71,7 @@
       }
     },
     {
-      "flavor_text": "Ditto kann jede beliebige Gestalt annehmen,\nwobei aber jedes Exemplar individuelle\nStärken und Schwächen aufweist.",
+      "flavor_text": "Es liegt in seiner Natur, konstant Elektrizität zu\nspeichern. Die Wälder, in denen Pikachu leben,\nbergen stets die Gefahr eines Blitzgewitters.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -83,7 +82,7 @@
       }
     },
     {
-      "flavor_text": "Il peut prendre l’apparence de n’importe quoi,\nmais chaque Métamorph a son propre domaine\nde prédilection et ses propres faiblesses.",
+      "flavor_text": "Son corps peut accumuler de l’électricité.\nLes forêts abritant des groupes de Pikachu\nsont d’ailleurs souvent frappées par la foudre.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -94,7 +93,7 @@
       }
     },
     {
-      "flavor_text": "能夠變身成任何東西，\n但每隻百變怪似乎各自有\n擅長和不擅長變形的對象。",
+      "flavor_text": "擁有儲蓄電力的特性。\n皮卡丘群居的森林裡\n會不斷落雷，十分危險。",
       "language": {
         "name": "zh-Hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
@@ -105,7 +104,7 @@
       }
     },
     {
-      "flavor_text": "뭐든지 변신할 수 있지만\n메타몽마다 잘하는 변신과\n잘 못하는 변신이 있다고 한다.",
+      "flavor_text": "전기를 모으는 성질을 띠고 있다.\n피카츄가 무리 지어 사는 숲은\n낙뢰가 끊이지 않아 위험하다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -116,7 +115,7 @@
       }
     },
     {
-      "flavor_text": "どんなものにも　へんしん　できるが\nメタモンごとに　とくいな　ものと\nにがてな　ものが　あるらしい。",
+      "flavor_text": "でんきを　ためこむ　せいしつ。\nピカチュウが　むれて　くらす　もりは\nらくらいが　たえず　キケンだ。",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -127,7 +126,7 @@
       }
     },
     {
-      "flavor_text": "因其惊人的变身能力，\n无论与谁都能成为伙伴。\n但是百变怪同类间关系恶劣。",
+      "flavor_text": "有积聚电力的特质。\n不时常尽情释放电力的话，\n就会倍感压力。",
       "language": {
         "name": "zh-Hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
@@ -138,7 +137,7 @@
       }
     },
     {
-      "flavor_text": "驚きの　変身能力で\nどんな者とも　仲間に　なれる。\nメタモン同士は　仲が　悪い。",
+      "flavor_text": "電気を　溜める　性質。\n時々　思い切り　放電\nしないと　ストレスを　感じる。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -149,7 +148,7 @@
       }
     },
     {
-      "flavor_text": "With its astonishing capacity for\nmetamorphosis, it can get along with anything.\nIt does not get along well with its fellow Ditto.",
+      "flavor_text": "It’s in its nature to store electricity. It feels\nstressed now and then if it’s unable to fully\ndischarge the electricity.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -160,7 +159,7 @@
       }
     },
     {
-      "flavor_text": "Grazie alle sue incredibili doti metamorfiche,\npuò assumere le sembianze di qualunque essere\nvivente. I Ditto non vanno d’accordo fra di loro.",
+      "flavor_text": "Accumula naturalmente elettricità. Se ogni tanto\nnon si sfoga emettendo scariche elettriche,\nrischia di essere sopraffatto dallo stress.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -171,7 +170,7 @@
       }
     },
     {
-      "flavor_text": "Ditto puede hacerse amigo de otros Pokémon\ngracias a su habilidad para transformarse. Sin\nembargo, los Ditto no se llevan bien entre sí.",
+      "flavor_text": "Pikachu almacena electricidad en su cuerpo.\nSi no la libera de vez en cuando y se desfoga,\npuede sufrir estrés.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -182,7 +181,7 @@
       }
     },
     {
-      "flavor_text": "Dank seiner Fähigkeiten als Gestaltwandler\nkann es sich mit allen Lebewesen anfreunden.\nNur mit Artgenossen kommt es nicht zurecht.",
+      "flavor_text": "Es liegt in seiner Natur, konstant Elektrizität in\nsich anzustauen. Kann es diese nicht regelmäßig\nentladen, löst dies Stress aus.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -193,7 +192,7 @@
       }
     },
     {
-      "flavor_text": "Grâce à son don de transformation, ce Pokémon\npeut devenir l’ami de tous les êtres vivants, sauf\ndes autres Métamorph, qu’il déteste.",
+      "flavor_text": "Un Pokémon capable de condenser l’électricité.\nIl doit décharger l’énergie accumulée de temps\nen temps au risque d’accroître son stress.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -204,7 +203,7 @@
       }
     },
     {
-      "flavor_text": "因其驚人的變身能力，\n無論與誰都能成為夥伴。\n但是百變怪同類之間的關係惡劣。",
+      "flavor_text": "有積聚電力的特質。\n不時常盡情釋放電力的話，\n就會倍感壓力。",
       "language": {
         "name": "zh-Hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
@@ -215,7 +214,7 @@
       }
     },
     {
-      "flavor_text": "놀라운 변신 능력으로\n누구와도 동료가 될 수 있다.\n메타몽끼리는 사이가 나쁘다.",
+      "flavor_text": "전기를 모으는 성질을 가졌다.\n가끔 마음껏 방전하지\n않으면 스트레스를 받는다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -226,7 +225,7 @@
       }
     },
     {
-      "flavor_text": "おどろきの　へんしんのうりょくで\nどんなものとも　なかまに　なれる。\nメタモンどうしは　なかが　わるい。",
+      "flavor_text": "でんきを　ためる　せいしつ。\nときどき　おもいきり　ほうでん\nしないと　ストレスを　かんじる。",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -237,7 +236,7 @@
       }
     },
     {
-      "flavor_text": "体の　細胞を　組 替えて　変身する。\n思い出しながら　以前　見た　ものに　変わると\nちょっと　違う　形に　なってしまうのだ。",
+      "flavor_text": "ほっぺの　電気袋の　電気は　真夜中\n寝ている　間に　ためられている　らしいよ。\n寝ぼけて　放電してしまう　ことが　ある。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -248,7 +247,7 @@
       }
     },
     {
-      "flavor_text": "Ditto rearranges its cell structure to transform itself into other\nshapes. However, if it tries to transform itself into something\nby relying on its memory, this Pokémon manages to get\ndetails wrong.",
+      "flavor_text": "This Pokémon has electricity-storing pouches on its cheeks.\nThese appear to become electrically charged during the night\nwhile Pikachu sleeps. It occasionally discharges electricity\nwhen it is dozy after waking up.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -259,7 +258,7 @@
       }
     },
     {
-      "flavor_text": "Ditto cambia la sua struttura cellulare per assumere molte\naltre forme. Tuttavia, quando si affida solo alla sua memoria,\ntalvolta dimentica dettagli importanti.",
+      "flavor_text": "Pikachu immagazzina l’elettricità nelle guance. Pare che\nqueste si ricarichino durante la notte quando dorme.\nTalvolta emette delle scariche elettriche al risveglio mentre\nè ancora assonnato.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -270,7 +269,7 @@
       }
     },
     {
-      "flavor_text": "Ditto reorganiza la estructura de sus células para adoptar\notras formas. Pero, como intente transformarse en algo\nguiándose por los datos que tenga almacenados en la\nmemoria, habrá detalles que se le escapen.",
+      "flavor_text": "Este Pokémon tiene unas bolsas en las mejillas donde\nalmacena electricidad. Parece ser que se recargan por la\nnoche, mientras Pikachu duerme. A veces, cuando se acaba\nde despertar y está aún medio dormido, descarga un poco.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -281,7 +280,7 @@
       }
     },
     {
-      "flavor_text": "Ditto verändert seine Zellstruktur, um sich in eine andere Form\nzu verwandeln. Wenn es sich dabei jedoch auf sein Gedächtnis\nverlässt, unterlaufen diesem Pokémon schon mal Fehler.",
+      "flavor_text": "Dieses Pokémon kann in seinen Backentaschen Elektrizität\nspeichern. Diese laden sich nachts auf, während Pikachu\nschläft. Es entlädt manchmal seine elektrische Ladung,\nwenn es gerade aufgewacht und noch schläfrig ist.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -292,7 +291,7 @@
       }
     },
     {
-      "flavor_text": "Métamorph peut modifier sa structure moléculaire pour\nprendre d’autres formes. Lorsqu’il essaie de se transformer\nde mémoire, il lui arrive de se tromper sur certains détails.",
+      "flavor_text": "Ce Pokémon dispose de petites poches dans les joues pour\nstocker de l’électricité. Elles semblent se charger pendant\nque Pikachu dort. Il libère parfois un peu d’électricité\nlorsqu’il n’est pas encore bien réveillé.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -303,7 +302,7 @@
       }
     },
     {
-      "flavor_text": "몸의 세포를 재구성하여 변신한다.\n전에 봤던 것을 기억해내면서 바뀌면\n조금 다른 형태가 되어버린다.",
+      "flavor_text": "뺨의 전기 주머니에 있는 전기는 한밤중\n자는 동안 축적되는 것 같다.\n잠이 덜 깨서 방전하기도 한다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -314,7 +313,7 @@
       }
     },
     {
-      "flavor_text": "からだの　さいぼうを　く かえて　へんしんする。\nおもいだしながら　いぜん　 た　ものに　かわると\nちょっと　ちがう　かたちに　なってしまうのだ。",
+      "flavor_text": "ほっぺの　でんきぶくろの　でんきは　まよなか\nねている　あいだに　ためられている　らしいよ。\nねぼけて　ほうでんしてしまう　ことが　ある。",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -325,7 +324,7 @@
       }
     },
     {
-      "flavor_text": "体の　細胞を　組 替えて　変身する。\n思い出しながら　以前　見た　ものに　変わると\nちょっと　違う　形に　なってしまうのだ。",
+      "flavor_text": "はじめて　 る　ものには　電撃を　当てる。\n黒こげの　きの が　落ちていたら　それは\n電撃の　強さを　間違えた　証拠だよ。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
@@ -336,7 +335,7 @@
       }
     },
     {
-      "flavor_text": "Ditto rearranges its cell structure to transform itself into other\nshapes. However, if it tries to transform itself into something\nby relying on its memory, this Pokémon manages to get\ndetails wrong.",
+      "flavor_text": "Whenever Pikachu comes across something new,\nit blasts it with a jolt of electricity. If you come across a\nblackened berry, it’s evidence that this Pokémon mistook the\nintensity of its charge.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -347,7 +346,7 @@
       }
     },
     {
-      "flavor_text": "Ditto cambia la sua struttura cellulare per assumere molte\naltre forme. Tuttavia, quando si affida solo alla sua memoria,\ntalvolta dimentica dettagli importanti.",
+      "flavor_text": "Quando Pikachu incontra qualcosa che non conosce, lo\ncolpisce con una scarica elettrica. Quando si vede una bacca\nannerita, è evidente che questo Pokémon ha emesso una\nscossa troppo forte.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
@@ -358,7 +357,7 @@
       }
     },
     {
-      "flavor_text": "Ditto reorganiza la estructura de sus células para adoptar\notras formas. Pero, como intente transformarse en algo\nguiándose por los datos que tenga almacenados en la\nmemoria, habrá detalles que se le escapen.",
+      "flavor_text": "Cada vez que un Pikachu se encuentra con algo nuevo, le\nlanza una descarga eléctrica. Cuando se ve alguna baya\nchamuscada, es muy probable que sea obra de un Pikachu,\nya que a veces no controlan la intensidad de la descarga.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
@@ -369,7 +368,7 @@
       }
     },
     {
-      "flavor_text": "Ditto verändert seine Zellstruktur, um sich in eine andere Form\nzu verwandeln. Wenn es sich dabei jedoch auf sein Gedächtnis\nverlässt, unterlaufen diesem Pokémon schon mal Fehler.",
+      "flavor_text": "Immer wenn Pikachu auf etwas Neues stößt, jagt es\neinen Elektroschock hindurch. Wenn du eine verkohlte\nBeere findest, hat dieses Pokémon seine elektrische\nLadung falsch eingeschätzt.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
@@ -380,7 +379,7 @@
       }
     },
     {
-      "flavor_text": "Métamorph peut modifier sa structure moléculaire pour\nprendre d’autres formes. Lorsqu’il essaie de se transformer\nde mémoire, il lui arrive de se tromper sur certains détails.",
+      "flavor_text": "Chaque fois que Pikachu découvre quelque chose de\nnouveau, il envoie un arc électrique. Lorsqu’on tombe\nsur une Baie carbonisée, ça signifie sans doute qu’un\nde ces Pokémon a envoyé une charge trop forte.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -391,7 +390,7 @@
       }
     },
     {
-      "flavor_text": "몸의 세포를 재구성하여 변신한다.\n전에 봤던 것을 기억해내면서 바뀌면\n조금 다른 형태가 되어버린다.",
+      "flavor_text": "처음 보는 것에게는 전격을 맞춘다.\n새까맣게 탄 나무열매가 떨어져 있다는 것은\n전격의 세기를 조절하지 못했다는 증거다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
@@ -402,7 +401,7 @@
       }
     },
     {
-      "flavor_text": "からだの　さいぼうを　く かえて　へんしんする。\nおもいだしながら　いぜん　 た　ものに　かわると\nちょっと　ちがう　かたちに　なってしまうのだ。",
+      "flavor_text": "はじめて　 る　ものには　でんげきを　あてる。\nくろこげの　きの が　おちていたら　それは\nでんげきの　つよさを　まちがえた　しょうこだよ。",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -413,183 +412,135 @@
       }
     },
     {
-      "flavor_text": "体の　細胞の　作りを\n自分で　組み替えて\nほかの　生命体に　変身する。",
+      "flavor_text": "ほっぺたの　両側に\n小さい　電気袋を　持つ。\nピンチのときに　放電する。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "It can freely recombine its own cellular structure to\ntransform into other life-forms.",
+      "flavor_text": "It has small electric sacs on both its cheeks.\nIf threatened, it looses electric charges from\nthe sacs.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "Può ricombinare a piacere la propria struttura\ncellulare per trasformarsi in altri esseri viventi.",
+      "flavor_text": "Se spaventato, perde scariche elettriche dalle due\nsacche che ha sulle guance.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "Tiene la capacidad de reorganizar su estructura celular\npara convertirse en otras formas de vida.",
+      "flavor_text": "Las bolsas de las mejillas están llenas de electricidad,\nque libera cuando se siente amenazado.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "Es kann seine eigene Zellstruktur frei zusammensetzen\nund sich in jede andere Lebensform verwandeln.",
+      "flavor_text": "Es hat kleine Backentaschen, die mit Elektrizität\ngefüllt sind. Bei Gefahr entlädt es sie.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "Métamorph peut modifier sa structure cellulaire à\nsa guise pour se transformer en n’importe quelle\nforme vivante.",
+      "flavor_text": "Pikachu a de petites poches pleines d’électricité sur\nses joues. S’il se sent menacé, il laisse s’échapper\ndes décharges électriques.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "몸의 세포 구성을\n스스로 바꿔서 다른\n생명체로 변신한다.",
+      "flavor_text": "뺨의 양쪽에\n작은 전기 주머니가 있다.\n위기 상황일 때 방전한다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "からだの　さいぼうの　つくりを\nじぶんで　くみかえて　ほかの\nせいめいたいに　へんしんする。",
+      "flavor_text": "ほっぺたの　りょうがわに\nちいさい　でんきぶくろを　もつ。\nピンチのときに　ほうでんする。",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
       },
-      "version": {
-        "name": "y",
-        "url": "https://pokeapi.co/api/v2/version/24/"
-      }
+      "version": { "name": "y", "url": "https://pokeapi.co/api/v2/version/24/" }
     },
     {
-      "flavor_text": "全身の　細胞を　組み替えて\n見たものの　形　そっくりに\n変身する　能力を　持つ。",
+      "flavor_text": "尻尾を　立てて　まわりの　様子を\n探っていると　ときどき\n雷が　尻尾に　落ちてくる。",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "It has the ability to reconstitute its entire cellular\nstructure to transform into whatever it sees.",
+      "flavor_text": "It raises its tail to check its surroundings.\nThe tail is sometimes struck by lightning\nin this pose.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "Ha la capacità di modificare la sua struttura cellulare\nper trasformarsi in qualsiasi cosa veda.",
+      "flavor_text": "Solleva la coda per esaminare l’ambiente circostante.\nA volte la coda è colpita da un fulmine quando è in\nquesta posizione.",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "Puede alterar por completo su estructura celular para\nemular cualquier objeto que vea.",
+      "flavor_text": "Levanta su cola para vigilar los alrededores. A veces,\npuede ser alcanzado por un rayo en esa pose.",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "Es kann seine Zellstruktur so verändern, dass es\nsich in alles verwandeln kann, was es sieht.",
+      "flavor_text": "Es streckt seinen Schweif nach oben, um seine\nUmgebung zu prüfen. Häufig fährt ein Blitz hinein.",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "Il a la capacité de modifier sa structure cellulaire pour\nprendre l’apparence de ce qu’il voit.",
+      "flavor_text": "Il élève sa queue pour surveiller les environs.\nElle attire souvent la foudre dans cette position.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "전신의 세포를 재구성해서\n본 것의 모양과 똑 닮게\n변신하는 능력을 가지고 있다.",
+      "flavor_text": "꼬리를 세우고 주변의\n상황을 살피다 보면 가끔\n꼬리에 번개가 친다.",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "ぜんしんの　さいぼうを　くみかえて\nみたものの　かたち　そっくりに\nへんしんする　のうりょくを　もつ。",
+      "flavor_text": "しっぽを　たてて　まわりの\nようすを　さぐっていると　ときどき\nかみなりが　しっぽに　おちてくる。",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
       },
-      "version": {
-        "name": "x",
-        "url": "https://pokeapi.co/api/v2/version/23/"
-      }
+      "version": { "name": "x", "url": "https://pokeapi.co/api/v2/version/23/" }
     },
     {
-      "flavor_text": "It can reconstitute its entire cellular\nstructure to change into what it sees,\nbut it returns to normal when it relaxes.",
+      "flavor_text": "It occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -600,7 +551,7 @@
       }
     },
     {
-      "flavor_text": "It can reconstitute its entire cellular\nstructure to change into what it sees,\nbut it returns to normal when it relaxes.",
+      "flavor_text": "It occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -611,7 +562,7 @@
       }
     },
     {
-      "flavor_text": "It has the ability to reconstitute\nits entire cellular structure to\ntransform into whatever it sees.",
+      "flavor_text": "It occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -622,7 +573,7 @@
       }
     },
     {
-      "flavor_text": "Il a la capacité de modifier sa\nstructure cellulaire pour prendre\nl’apparence de ce qu’il voit.",
+      "flavor_text": "Il lui arrive de remettre d’aplomb\nun Pikachu allié en lui envoyant\nune décharge électrique.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -633,7 +584,7 @@
       }
     },
     {
-      "flavor_text": "It has the ability to reconstitute\nits entire cellular structure to\ntransform into whatever it sees.",
+      "flavor_text": "It occasionally uses an electric\nshock to recharge a fellow Pikachu\nthat is in a weakened state.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -644,7 +595,7 @@
       }
     },
     {
-      "flavor_text": "Il a la capacité de modifier sa\nstructure cellulaire pour prendre\nl’apparence de ce qu’il voit.",
+      "flavor_text": "Il lui arrive de remettre d’aplomb\nun Pikachu allié en lui envoyant\nune décharge électrique.",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
@@ -655,7 +606,7 @@
       }
     },
     {
-      "flavor_text": "Its transformation ability is perfect.\nHowever, if made to laugh, it\ncan’t maintain its disguise.",
+      "flavor_text": "It raises its tail to check its\nsurroundings. The tail is sometimes\nstruck by lightning in this pose.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -666,7 +617,7 @@
       }
     },
     {
-      "flavor_text": "It can transform into anything.\nWhen it sleeps, it changes into a\nstone to avoid being attacked.",
+      "flavor_text": "This intelligent Pokémon roasts\nhard berries with electricity to\nmake them tender enough to eat.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -677,7 +628,7 @@
       }
     },
     {
-      "flavor_text": "It has the ability to reconstitute\nits entire cellular structure to\ntransform into whatever it sees.",
+      "flavor_text": "It occasionally uses an electric\nshock to recharge a fellow PIKACHU\nthat is in a weakened state.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -688,7 +639,7 @@
       }
     },
     {
-      "flavor_text": "It has the ability to reconstitute\nits entire cellular structure to\ntransform into whatever it sees.",
+      "flavor_text": "If it looses crackling power from\nthe electric pouches on its\ncheeks, it is being wary.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -699,7 +650,7 @@
       }
     },
     {
-      "flavor_text": "It has the ability to reconstitute\nits entire cellular structure to\ntransform into whatever it sees.",
+      "flavor_text": "It lives in forests with others.\nIt stores electricity in the\npouches on its cheeks.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -710,7 +661,7 @@
       }
     },
     {
-      "flavor_text": "Capable of copying an opponent’s genetic\ncode to instantly transform itself into a\nduplicate of the enemy.",
+      "flavor_text": "When several of these POKéMON gather,\ntheir electricity can build and cause\nlightning storms.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -721,7 +672,7 @@
       }
     },
     {
-      "flavor_text": "It can freely recombine its own cellular\nstructure to transform into other life-\nforms.",
+      "flavor_text": "It has small electric sacs on both its\ncheeks. If threatened, it looses electric\ncharges from the sacs.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -732,7 +683,7 @@
       }
     },
     {
-      "flavor_text": "A DITTO rearranges its cell structure to\ntransform itself. However, if it tries to\nchange based on its memory, it will get\ndetails wrong.",
+      "flavor_text": "It stores electricity in the electric sacs\non its cheeks. When it releases pent-up\nenergy in a burst, the electric power is\nequal to a lightning bolt.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -743,7 +694,7 @@
       }
     },
     {
-      "flavor_text": "DITTO rearranges its cell structure to\ntransform itself into other shapes.\nHowever, if it tries to transform itself\finto something by relying on its memory,\nthis POKéMON manages to get details\nwrong.",
+      "flavor_text": "This POKéMON has electricity-storing\npouches on its cheeks. These appear to\nbecome electrically charged during the\fnight while PIKACHU sleeps.\nIt occasionally discharges electricity\nwhen it is dozy after waking up.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -754,7 +705,7 @@
       }
     },
     {
-      "flavor_text": "DITTO rearranges its cell structure to\ntransform itself into other shapes.\nHowever, if it tries to transform itself\finto something by relying on its memory,\nthis POKéMON manages to get details\nwrong.",
+      "flavor_text": "Whenever PIKACHU comes across\nsomething new, it blasts it with a jolt\nof electricity.\fIf you come across a blackened berry,\nit’s evidence that this POKéMON\nmistook the intensity of its charge.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -765,7 +716,7 @@
       }
     },
     {
-      "flavor_text": "When it encount­\ners another DITTO,\nit will move\ffaster than normal\nto duplicate that\nopponent exactly.",
+      "flavor_text": "When it is anger­\ned, it immediately\ndischarges the\fenergy stored in\nthe pouches in its\ncheeks.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -776,7 +727,7 @@
       }
     },
     {
-      "flavor_text": "Its transformation\nability is per­\nfect. However, if\fmade to laugh, it\ncan't maintain its\ndisguise.",
+      "flavor_text": "It raises its tail\nto check its sur­\nroundings. The\ftail is sometimes\nstruck by light­\nning in this pose.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -787,7 +738,7 @@
       }
     },
     {
-      "flavor_text": "It can transform\ninto anything.\nWhen it sleeps, it\fchanges into a\nstone to avoid\nbeing attacked.",
+      "flavor_text": "This intelligent\nPOKéMON roasts\nhard BERRIES with\felectricity to\nmake them tender\nenough to eat.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -798,7 +749,7 @@
       }
     },
     {
-      "flavor_text": "When it spots an\nenemy, its body\ntransfigures into\fan almost perfect\ncopy of its oppo­\nnent.",
+      "flavor_text": "It keeps its tail\nraised to monitor\nits surroundings.\fIf you yank its\ntail, it will try\nto bite you.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -809,7 +760,7 @@
       }
     },
     {
-      "flavor_text": "Capable of copying\nan enemy's genetic\ncode to instantly\ftransform itself\ninto a duplicate\nof the enemy.",
+      "flavor_text": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -820,7 +771,7 @@
       }
     },
     {
-      "flavor_text": "Capable of copying\nan enemy's genetic\ncode to instantly\ftransform itself\ninto a duplicate\nof the enemy.",
+      "flavor_text": "When several of\nthese POKéMON\ngather, their\felectricity could\nbuild and cause\nlightning storms.",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
@@ -833,73 +784,73 @@
   ],
   "form_descriptions": [],
   "forms_switchable": false,
-  "gender_rate": -1,
+  "gender_rate": 4,
   "genera": [
     {
-      "genus": "变身宝可梦",
+      "genus": "鼠宝可梦",
       "language": {
         "name": "zh-Hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
       }
     },
     {
-      "genus": "へんしんポケモン",
+      "genus": "ねずみポケモン",
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
       }
     },
     {
-      "genus": "Transform Pokémon",
+      "genus": "Mouse Pokémon",
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
       }
     },
     {
-      "genus": "Pokémon Mutante",
+      "genus": "Pokémon Topo",
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
       }
     },
     {
-      "genus": "Pokémon Transform.",
+      "genus": "Pokémon Ratón",
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
       }
     },
     {
-      "genus": "Transform",
+      "genus": "Maus",
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
       }
     },
     {
-      "genus": "Pokémon Morphing",
+      "genus": "Pokémon Souris",
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
       }
     },
     {
-      "genus": "變身寶可夢",
+      "genus": "鼠寶可夢",
       "language": {
         "name": "zh-Hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
       }
     },
     {
-      "genus": "변신포켓몬",
+      "genus": "쥐포켓몬",
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
       }
     },
     {
-      "genus": "へんしんポケモン",
+      "genus": "ねずみポケモン",
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
@@ -915,142 +866,170 @@
     "url": "https://pokeapi.co/api/v2/growth-rate/2/"
   },
   "habitat": {
-    "name": "urban",
-    "url": "https://pokeapi.co/api/v2/pokemon-habitat/8/"
+    "name": "forest",
+    "url": "https://pokeapi.co/api/v2/pokemon-habitat/2/"
   },
-  "has_gender_differences": false,
-  "hatch_counter": 20,
-  "id": 132,
+  "has_gender_differences": true,
+  "hatch_counter": 10,
+  "id": 25,
   "is_baby": false,
-  "name": "ditto",
+  "name": "pikachu",
   "names": [
     {
       "language": {
         "name": "zh-Hans",
         "url": "https://pokeapi.co/api/v2/language/12/"
       },
-      "name": "百变怪"
+      "name": "皮卡丘"
     },
     {
       "language": {
         "name": "ja",
         "url": "https://pokeapi.co/api/v2/language/11/"
       },
-      "name": "メタモン"
+      "name": "ピカチュウ"
     },
     {
       "language": {
         "name": "en",
         "url": "https://pokeapi.co/api/v2/language/9/"
       },
-      "name": "Ditto"
+      "name": "Pikachu"
     },
     {
       "language": {
         "name": "it",
         "url": "https://pokeapi.co/api/v2/language/8/"
       },
-      "name": "Ditto"
+      "name": "Pikachu"
     },
     {
       "language": {
         "name": "es",
         "url": "https://pokeapi.co/api/v2/language/7/"
       },
-      "name": "Ditto"
+      "name": "Pikachu"
     },
     {
       "language": {
         "name": "de",
         "url": "https://pokeapi.co/api/v2/language/6/"
       },
-      "name": "Ditto"
+      "name": "Pikachu"
     },
     {
       "language": {
         "name": "fr",
         "url": "https://pokeapi.co/api/v2/language/5/"
       },
-      "name": "Métamorph"
+      "name": "Pikachu"
     },
     {
       "language": {
         "name": "zh-Hant",
         "url": "https://pokeapi.co/api/v2/language/4/"
       },
-      "name": "百變怪"
+      "name": "皮卡丘"
     },
     {
       "language": {
         "name": "ko",
         "url": "https://pokeapi.co/api/v2/language/3/"
       },
-      "name": "메타몽"
+      "name": "피카츄"
     },
     {
       "language": {
         "name": "roomaji",
         "url": "https://pokeapi.co/api/v2/language/2/"
       },
-      "name": "Metamon"
+      "name": "Pikachu"
     },
     {
       "language": {
         "name": "ja-Hrkt",
         "url": "https://pokeapi.co/api/v2/language/1/"
       },
-      "name": "メタモン"
+      "name": "ピカチュウ"
     }
   ],
-  "order": 156,
+  "order": 26,
   "pal_park_encounters": [
     {
       "area": {
-        "name": "field",
-        "url": "https://pokeapi.co/api/v2/pal-park-area/2/"
+        "name": "forest",
+        "url": "https://pokeapi.co/api/v2/pal-park-area/1/"
       },
-      "base_score": 70,
-      "rate": 20
+      "base_score": 80,
+      "rate": 10
     }
   ],
   "pokedex_numbers": [
     {
-      "entry_number": 138,
+      "entry_number": 163,
       "pokedex": {
-        "name": "kalos-mountain",
-        "url": "https://pokeapi.co/api/v2/pokedex/14/"
+        "name": "updated-hoenn",
+        "url": "https://pokeapi.co/api/v2/pokedex/15/"
       }
     },
     {
-      "entry_number": 261,
+      "entry_number": 36,
       "pokedex": {
-        "name": "updated-unova",
-        "url": "https://pokeapi.co/api/v2/pokedex/9/"
+        "name": "kalos-central",
+        "url": "https://pokeapi.co/api/v2/pokedex/12/"
       }
     },
     {
-      "entry_number": 92,
+      "entry_number": 16,
+      "pokedex": {
+        "name": "conquest-gallery",
+        "url": "https://pokeapi.co/api/v2/pokedex/11/"
+      }
+    },
+    {
+      "entry_number": 22,
       "pokedex": {
         "name": "updated-johto",
         "url": "https://pokeapi.co/api/v2/pokedex/7/"
       }
     },
     {
-      "entry_number": 92,
+      "entry_number": 104,
+      "pokedex": {
+        "name": "extended-sinnoh",
+        "url": "https://pokeapi.co/api/v2/pokedex/6/"
+      }
+    },
+    {
+      "entry_number": 104,
+      "pokedex": {
+        "name": "original-sinnoh",
+        "url": "https://pokeapi.co/api/v2/pokedex/5/"
+      }
+    },
+    {
+      "entry_number": 156,
+      "pokedex": {
+        "name": "hoenn",
+        "url": "https://pokeapi.co/api/v2/pokedex/4/"
+      }
+    },
+    {
+      "entry_number": 22,
       "pokedex": {
         "name": "original-johto",
         "url": "https://pokeapi.co/api/v2/pokedex/3/"
       }
     },
     {
-      "entry_number": 132,
+      "entry_number": 25,
       "pokedex": {
         "name": "kanto",
         "url": "https://pokeapi.co/api/v2/pokedex/2/"
       }
     },
     {
-      "entry_number": 132,
+      "entry_number": 25,
       "pokedex": {
         "name": "national",
         "url": "https://pokeapi.co/api/v2/pokedex/1/"
@@ -1058,15 +1037,106 @@
     }
   ],
   "shape": {
-    "name": "ball",
-    "url": "https://pokeapi.co/api/v2/pokemon-shape/1/"
+    "name": "quadruped",
+    "url": "https://pokeapi.co/api/v2/pokemon-shape/8/"
   },
   "varieties": [
     {
       "is_default": true,
       "pokemon": {
-        "name": "ditto",
-        "url": "https://pokeapi.co/api/v2/pokemon/132/"
+        "name": "pikachu",
+        "url": "https://pokeapi.co/api/v2/pokemon/25/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-rock-star",
+        "url": "https://pokeapi.co/api/v2/pokemon/10080/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-belle",
+        "url": "https://pokeapi.co/api/v2/pokemon/10081/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-pop-star",
+        "url": "https://pokeapi.co/api/v2/pokemon/10082/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-phd",
+        "url": "https://pokeapi.co/api/v2/pokemon/10083/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-libre",
+        "url": "https://pokeapi.co/api/v2/pokemon/10084/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-cosplay",
+        "url": "https://pokeapi.co/api/v2/pokemon/10085/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-original-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10094/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-hoenn-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10095/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-sinnoh-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10096/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-unova-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10097/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-kalos-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10098/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-alola-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10099/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "pikachu-partner-cap",
+        "url": "https://pokeapi.co/api/v2/pokemon/10148/"
       }
     }
   ]
