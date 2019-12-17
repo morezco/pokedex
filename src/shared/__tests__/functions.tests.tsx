@@ -86,5 +86,7 @@ describe('pkdb', () => {
     expect(pkdb('Pikachu')).toBe(
       'https://img.pokemondb.net/artwork/pikachu.jpg',
     );
+
+    expect(pkdb()).toBe('https://img.pokemondb.net/artwork/pikachu.jpg');
   });
 });
