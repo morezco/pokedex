@@ -19,8 +19,8 @@ function Searchbar({
   scrollEffects,
   minimiseNav,
 }: SearchbarProps): React.ReactElement {
-  const hide = location && location.pathname !== '/';
-  const goHome = history && (() => history.push('/intro'));
+  const hide = location?.pathname !== '/';
+  const goHome = () => history?.push('/intro');
 
   return (
     <Header {...{ scrollEffects, minimiseNav }}>

@@ -6,6 +6,7 @@ import { mount } from 'enzyme';
 import { expect as cexpect } from 'chai';
 
 import PokemonPicture from './PokemonPicture';
+import { Container } from './styles';
 
 describe('The Pokemon Picture component', () => {
   it('renders', () => {
@@ -37,5 +38,10 @@ describe('The Pokemon Picture component', () => {
     wrapper.simulate('error');
     wrapper.simulate('error');
     cexpect(wrapper.find('img')).not.to.have.length;
+  });
+
+  it('has no broken styled components', () => {
+    const { baseElement } = render(<Container />);
+    expect(baseElement).toBeInTheDocument();
   });
 });

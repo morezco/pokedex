@@ -12,29 +12,39 @@ export interface RowProps {
   margin?: string;
 }
 
-const RIGHT = (vertical: boolean) => css`
-  ${vertical ? 'align-items' : 'justify-content'}: flex-end;
-`;
+export const RIGHT = (vertical?: boolean) =>
+  vertical &&
+  css`
+    ${vertical ? 'align-items' : 'justify-content'}: flex-end;
+  `;
 
-const COL = () => css`
-  flex-direction: column;
-`;
+export const COL = (vertical?: boolean) =>
+  vertical &&
+  css`
+    flex-direction: column;
+  `;
 
-const CENTER = (vertical: boolean) => css`
+export const CENTER = (vertical?: boolean) => css`
   ${vertical ? 'align-items' : 'justify-content'}: CENTER;
 `;
 
-const SPACED = () => css`
-  justify-content: space-between;
-`;
+export const SPACED = (spaced?: boolean) =>
+  spaced &&
+  css`
+    justify-content: space-between;
+  `;
 
-const EVEN = () => css`
-  justify-content: space-evenly;
-`;
+export const EVEN = (even?: boolean) =>
+  even &&
+  css`
+    justify-content: space-evenly;
+  `;
 
-const AROUND = () => css`
-  justify-content: space-around;
-`;
+export const AROUND = (around?: boolean) =>
+  around &&
+  css`
+    justify-content: space-around;
+  `;
 
 export const Element = styled.div<RowProps>`
   display: flex;
@@ -46,15 +56,17 @@ export const Element = styled.div<RowProps>`
   transition: all 0.3s ease-in-out;
   ${({ transform }) => transform && `transform: ${transform};`}
 
-  ${({ vertical }) => vertical && COL()}
-  ${({ center, vertical }) => center && CENTER(!!vertical)}
-  ${({ right, vertical }) => right && RIGHT(!!vertical)}
-  ${({ spaced }) => spaced && SPACED()}
-  ${({ even }) => even && EVEN()}
-  ${({ around }) => around && AROUND()}
+  ${({ vertical }) => COL(vertical)}
+  ${({ center, vertical }) => CENTER(center && !!vertical)}
+  ${({ right, vertical }) => RIGHT(!!vertical && right)}
+  ${({ spaced }) => SPACED(spaced)}
+  ${({ even }) => EVEN(even)}
+  ${({ around }) => AROUND(around)}
 
   @media (max-width: 1000px) {
-    ${COL}
+    ${COL(true)}
     ${CENTER(true)}
   }
 `;
+
+export default { Element, COL, CENTER, RIGHT, SPACED, EVEN, AROUND };

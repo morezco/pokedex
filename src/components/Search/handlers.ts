@@ -6,8 +6,8 @@ export const changeHandler = (e: any) => {
     target: { value },
   } = e;
 
-  Pokemons.search((x: any) =>
-    value ? ExtractProperty(x).includes(Clean(value)) : false,
+  Pokemons.search(
+    (x: any) => value && ExtractProperty(x).includes(Clean(value)),
   );
-  Pokemons.lookup = value || '';
+  Pokemons.lookup = value;
 };

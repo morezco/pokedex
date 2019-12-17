@@ -10,10 +10,12 @@ const SearchContainerHide = css`
   transform: translateY(-500%);
 `;
 
-const minimisedNav = css`
-  position: relative;
-  height: 85px;
-`;
+const minimisedNav = (minimiseNav?: boolean) =>
+  minimiseNav &&
+  css`
+    position: relative;
+    height: 85px;
+  `;
 
 export const Header = styled.header<ContainerProps>`
   display: flex;
@@ -55,7 +57,7 @@ export const Header = styled.header<ContainerProps>`
       }
     `}
 
-  ${({ minimiseNav }) => minimiseNav && minimisedNav};
+  ${({ minimiseNav }) => minimisedNav(minimiseNav)};
 `;
 
 export const Wrapper = styled.div`
