@@ -8,6 +8,7 @@ import {
   reduceStats,
   reorganiseSpecies,
   recursivelySortEvolutionaryData,
+  reduceEncounters,
 } from './processing';
 
 class PokemonService {
@@ -41,11 +42,11 @@ class PokemonService {
           )
         ).data;
 
-        data.encounters = (
+        data.encounters = reduceEncounters(
           await api.get(
             `/pokemon/${extractId(data.location_area_encounters)}/encounters`,
-          )
-        ).data?.map(({ location_area }: any) => location_area.name);
+          ),
+        );
 
         recursivelySortEvolutionaryData(data);
 

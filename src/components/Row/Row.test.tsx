@@ -13,8 +13,8 @@ describe('The Row Component', () => {
   });
 
   it('should not have any broken styles', () => {
-    expect(Styled.RIGHT()).to.be.undefined;
-    expect(Styled.RIGHT(false)).to.be.false;
+    expect(Styled.RIGHT()).to.have.length(3);
+    expect(Styled.RIGHT(false)).to.have.length(3);
     expect(Styled.RIGHT(true)).to.have.length(3);
     expect(Styled.COL()).to.be.undefined;
     expect(Styled.COL(true)).to.have.length(1);

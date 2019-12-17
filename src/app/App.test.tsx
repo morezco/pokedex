@@ -16,13 +16,5 @@ describe('App Component', () => {
   it('toggles scroll effects upon scrolling', () => {
     const Searchbar = wrapper.find(SearchBar);
     expect(Searchbar.prop('scrollEffects')).to.be.true;
-
-    // Pokemons.search('a');
-
-    // // wrapper. ('scroll', 0, 500);
-    // expect(Searchbar.prop('scrollEffects')).to.be.false;
-
-    // wrapper.simulate('scroll', 0, -60);
-    // expect(Searchbar.prop('scrollEffects')).to.be.true;
   });
 });

@@ -6,11 +6,13 @@ interface ContainerProps {
   minimiseNav?: boolean;
 }
 
-const SearchContainerHide = css`
-  transform: translateY(-500%);
-`;
+export const SearchContainerHide = (hide?: boolean) =>
+  hide &&
+  css`
+    transform: translateY(-500%);
+  `;
 
-const minimisedNav = (minimiseNav?: boolean) =>
+export const minimisedNav = (minimiseNav?: boolean) =>
   minimiseNav &&
   css`
     position: relative;
@@ -100,5 +102,5 @@ export const SearchContainer = styled.div<ContainerProps>`
 
   transition: all 0.5s ease-in-out;
 
-  ${({ hide }) => hide && SearchContainerHide}
+  ${({ hide }) => SearchContainerHide(hide)}
 `;

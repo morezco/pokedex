@@ -1,10 +1,11 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
 import { mount } from 'enzyme';
 import { expect } from 'chai';
 
 import List from './List';
-import Tile from './Tile/Tile';
+import { Tile } from './Tile/Tile';
 import { Pokemons } from 'store';
 
 describe('The List component', () => {
@@ -13,7 +14,11 @@ describe('The List component', () => {
     setTimeout(() => {
       expect(Pokemons.pokemon).not.to.be.null;
 
-      mount(<List />);
+      mount(
+        <MemoryRouter>
+          <List />
+        </MemoryRouter>,
+      );
       expect(Pokemons.pokemon).to.be.null;
       done();
     }, 1000);
@@ -21,7 +26,11 @@ describe('The List component', () => {
 
   it('should list all of the data in the results array of the pokemon store', done => {
     Pokemons.search('eevee');
-    const wrapper = mount(<List />);
+    const wrapper = mount(
+      <MemoryRouter>
+        <List />
+      </MemoryRouter>,
+    );
 
     setTimeout(() => {
       expect(wrapper.find(Tile)).to.have.length(1);

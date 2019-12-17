@@ -49,4 +49,4 @@ Para consolidar uma versão de produção da aplicação.<br />
 
 **Componentes de UI ficam em `/components`.** Se um componente é generalista o suficiente para pertencer a mais de uma página, ele pertence a `/components`. Componentes que dependam de componentes menores devem ter estes colocados dentro de sua própria estrutura.
 
-**Registros ficam em `store/`**. O fluxo de dados nesta aplicação consiste de estados globais estáticos isolados uns dos outros em arquivos Store, na pasta store. Os estados são compostos de classes com observáveis do MobX que qualquer componente pode acessar e modificar.
+**Registros ficam em `/store`**. O fluxo de dados nesta aplicação consiste de estados globais estáticos isolados uns dos outros em arquivos Store, na pasta store. Os estados são compostos de classes com observáveis do MobX que qualquer componente pode acessar e modificar.

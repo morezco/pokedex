@@ -25,6 +25,9 @@ export const reorganiseSpecies = (data: any) => {
   );
 };
 
+export const reduceEncounters = (data: any) =>
+  data?.map(({ location_area }: any) => location_area.name);
+
 export const recursivelySortEvolutionaryData = (data: any) => {
   let evolutionData = [data.evolution.chain];
 

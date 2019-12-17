@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { expect as cexpect } from 'chai';
 
-import PokemonSprite from './PokemonSprite';
+import { PokemonSprite } from './PokemonSprite';
 
 describe('The Pokemon Sprite component', () => {
   it('renders', () => {

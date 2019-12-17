@@ -13,7 +13,6 @@ export interface RowProps {
 }
 
 export const RIGHT = (vertical?: boolean) =>
-  vertical &&
   css`
     ${vertical ? 'align-items' : 'justify-content'}: flex-end;
   `;
@@ -54,7 +53,7 @@ export const Element = styled.div<RowProps>`
 
 
   transition: all 0.3s ease-in-out;
-  ${({ transform }) => transform && `transform: ${transform};`}
+  ${({ transform }) => `transform: ${transform || 'none'};`}
 
   ${({ vertical }) => COL(vertical)}
   ${({ center, vertical }) => CENTER(center && !!vertical)}

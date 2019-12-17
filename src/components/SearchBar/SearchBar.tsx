@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { TESTING } from 'shared/constants';
 
 import { Header, Wrapper, LogoContainer, SearchContainer } from './styles';
 
@@ -13,7 +12,7 @@ export interface SearchbarProps {
   minimiseNav?: boolean;
 }
 
-function Searchbar({
+export function Searchbar({
   history,
   location,
   scrollEffects,
@@ -39,4 +38,4 @@ function Searchbar({
   );
 }
 
-export default !TESTING ? withRouter(Searchbar) : Searchbar;
+export default withRouter(Searchbar);

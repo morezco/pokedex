@@ -2,13 +2,12 @@ import React from 'react';
 import { pokemonDetail } from 'routes';
 import { extractId } from 'shared/helpers';
 import { withRouter } from 'react-router-dom';
-import { TESTING } from 'shared/constants';
 
 import { Container } from './styles';
 
 import { PokemonSprite } from 'components';
 
-function Tile({ data, history }: any) {
+export function Tile({ data, history }: any) {
   const gotoPokemon = () =>
     history.push(`${pokemonDetail(extractId(data.url))}`);
 
@@ -20,4 +19,4 @@ function Tile({ data, history }: any) {
   );
 }
 
-export default !TESTING ? withRouter(Tile) : Tile;
+export default withRouter(Tile);

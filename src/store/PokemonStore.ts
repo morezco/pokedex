@@ -1,6 +1,5 @@
 import { observable, action, computed, toJS } from 'mobx';
 import Service from 'services/PokemonService';
-import { TESTING } from 'shared/constants';
 
 import { Clean, ExtractProperty } from 'shared/storeSearch';
 
@@ -21,7 +20,7 @@ class PokemonStore {
     return typeof query === 'function'
       ? query
       : (value: any) =>
-          value ? ExtractProperty(value).includes(Clean(query)) : false;
+          (value && ExtractProperty(value).includes(Clean(query))) || false;
   }
 
   @action public async search(lens: any) {
@@ -37,11 +36,7 @@ class PokemonStore {
     this.Fetching = true;
     try {
       this.Collection = await Service.getAll();
-    } catch (oof) {
-      if (!TESTING) {
-        console.log(oof);
-      }
-    }
+    } catch (oof) {}
     this.Fetching = false;
   }
 
@@ -49,11 +44,7 @@ class PokemonStore {
     this.Fetching = true;
     try {
       this.Pokemon = await Service.getOne(id);
-    } catch (oof) {
-      if (!TESTING) {
-        console.log(oof);
-      }
-    }
+    } catch (oof) {}
     this.Fetching = false;
   }
 

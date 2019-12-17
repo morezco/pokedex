@@ -9,16 +9,6 @@ import { AppContainer } from './styles';
 import { SearchBar } from 'components';
 import Routes from 'routes';
 
-import API from 'api';
-
-declare global {
-  interface Window {
-    p: any;
-  }
-}
-
-window.p = API;
-
 function App() {
   const [minimiseNav, setMinimiseNav] = useState(false);
   const [scrollEffects, setScrollEffects] = useState(true);

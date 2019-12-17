@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import { TESTING } from 'shared/constants';
 
 import { Picture } from './styles';
 
 import { spriteURL } from 'shared/constants';
 import { extractId } from 'shared/helpers';
 
-function PokemonSprite({ url, width, height, history }: any) {
+export function PokemonSprite({ url, width, height, history }: any) {
   const [error, setError] = useState(false);
   const id = extractId(url);
   return !error ? (
@@ -23,4 +22,4 @@ function PokemonSprite({ url, width, height, history }: any) {
   ) : null;
 }
 
-export default !TESTING ? withRouter(PokemonSprite) : PokemonSprite;
+export default withRouter(PokemonSprite);
