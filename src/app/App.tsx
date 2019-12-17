@@ -15,9 +15,7 @@ function App() {
 
   useScrollPosition(
     ({ currPos }: any) => {
-      console.log(currPos);
-      const display = currPos.y > -50;
-      if (display !== scrollEffects) setScrollEffects(display);
+      setScrollEffects(currPos.y > -50 !== scrollEffects);
     },
     [scrollEffects],
   );

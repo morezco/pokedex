@@ -5,8 +5,6 @@ import { expect } from 'chai';
 import App from './App';
 import { SearchBar } from 'components';
 
-import { Pokemons } from 'store';
-
 describe('App Component', () => {
   const wrapper = mount(<App />);
 
