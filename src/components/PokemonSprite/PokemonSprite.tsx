@@ -12,6 +12,7 @@ function PokemonSprite({ url, width, height, history }: any) {
   const id = extractId(url);
   return !error ? (
     <Picture
+      data-testid='pokemonsprite'
       alt={'Pokemon'}
       width={width || '80'}
       height={height || '80'}
