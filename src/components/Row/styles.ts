@@ -12,7 +12,8 @@ export interface RowProps {
   margin?: string;
 }
 
-export const RIGHT = (vertical?: boolean) =>
+export const RIGHT = (right?: boolean, vertical?: boolean) =>
+  right &&
   css`
     ${vertical ? 'align-items' : 'justify-content'}: flex-end;
   `;
@@ -23,9 +24,11 @@ export const COL = (vertical?: boolean) =>
     flex-direction: column;
   `;
 
-export const CENTER = (vertical?: boolean) => css`
-  ${vertical ? 'align-items' : 'justify-content'}: CENTER;
-`;
+export const CENTER = (center?: boolean, vertical?: boolean) =>
+  center &&
+  css`
+    ${vertical ? 'align-items' : 'justify-content'}: center;
+  `;
 
 export const SPACED = (spaced?: boolean) =>
   spaced &&
@@ -56,8 +59,8 @@ export const Element = styled.div<RowProps>`
   ${({ transform }) => `transform: ${transform || 'none'};`}
 
   ${({ vertical }) => COL(vertical)}
-  ${({ center, vertical }) => CENTER(center && !!vertical)}
-  ${({ right, vertical }) => RIGHT(!!vertical && right)}
+  ${({ center, vertical }) => CENTER(center, !!vertical)}
+  ${({ right, vertical }) => RIGHT(right, !!vertical)}
   ${({ spaced }) => SPACED(spaced)}
   ${({ even }) => EVEN(even)}
   ${({ around }) => AROUND(around)}

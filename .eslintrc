@@ -20,7 +20,8 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-empty-function": "off",
     "require-atomic-updates": "off",
-    "no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "@typescript-eslint/interface-name-prefix": "off"
   },
   "settings": {
     "react": {

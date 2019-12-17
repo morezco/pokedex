@@ -13,12 +13,12 @@ describe('The Row Component', () => {
   });
 
   it('should not have any broken styles', () => {
-    expect(Styled.RIGHT()).to.have.length(3);
-    expect(Styled.RIGHT(false)).to.have.length(3);
+    expect(Styled.RIGHT()).to.be.undefined;
+    expect(Styled.RIGHT(false)).to.be.false;
     expect(Styled.RIGHT(true)).to.have.length(3);
     expect(Styled.COL()).to.be.undefined;
     expect(Styled.COL(true)).to.have.length(1);
-    expect(Styled.CENTER()).to.have.length(3);
+    expect(Styled.CENTER()).to.be.undefined;
     expect(Styled.CENTER(true)).to.have.length(3);
     expect(Styled.SPACED()).to.be.undefined;
     expect(Styled.SPACED(true)).to.have.length(1);

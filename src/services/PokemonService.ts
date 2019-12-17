@@ -43,15 +43,19 @@ class PokemonService {
         ).data;
 
         data.encounters = reduceEncounters(
-          await api.get(
-            `/pokemon/${extractId(data.location_area_encounters)}/encounters`,
-          ),
+          (
+            await api.get(
+              `/pokemon/${extractId(data.location_area_encounters)}/encounters`,
+            )
+          ).data,
         );
 
         recursivelySortEvolutionaryData(data);
 
         return data;
       } catch (ew) {
+        console.log(ew, data);
+
         return data;
       }
     } catch (oof) {

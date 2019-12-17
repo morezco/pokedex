@@ -20,9 +20,9 @@ export default function Table({ title, data }: TableProps) {
       <Layer>
         <Body>
           {data.map((blob: IBlob, i: number) => (
-            <Row onClick={blob.act} key={i}>
-              <Category>{blob.name}</Category>
-              <Value>{blob.value}</Value>
+            <Row onClick={blob?.act} key={i}>
+              <Category>{blob?.name}</Category>
+              <Value>{blob?.value}</Value>
             </Row>
           ))}
         </Body>

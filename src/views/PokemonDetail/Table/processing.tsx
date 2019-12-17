@@ -20,7 +20,7 @@ export const PokedexTable = (pokemon: any): TableProps => ({
     { name: 'Height', value: `${pokemon.height / 10}m` },
     { name: 'Weight', value: `${pokemon.weight / 10}kg` },
     { name: 'Abilities', value: <Components.Pair arr={pokemon.abilities} /> },
-    pokemon.encounters.length && {
+    pokemon.encounters?.length && {
       name: 'Encounters',
       value: <Components.List arr={pokemon.encounters} />,
     },
@@ -73,4 +73,4 @@ export const EvolutionaryTable = (pokemon: any, history: any): TableProps => ({
 });
 
 export const evo = (pokemon: any) =>
-  pokemon.evolution?.evolves_to.length || null;
+  pokemon.evolution?.evolves_to?.length || null;
