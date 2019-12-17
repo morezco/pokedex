@@ -1,3 +1,7 @@
+declare const global: any;
+
+export const TESTING = typeof global.it !== 'function';
+
 export const Categories = [
   'Pokémon',
   'Berries',

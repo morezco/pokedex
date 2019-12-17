@@ -1,5 +1,6 @@
 import { observable, action, computed, toJS } from 'mobx';
 import Service from 'services/PokemonService';
+import { TESTING } from 'shared/constants';
 
 import { Clean, ExtractProperty } from 'shared/storeSearch';
 
@@ -39,8 +40,8 @@ class PokemonStore {
     try {
       this.Collection = await Service.getAll();
     } catch (oof) {
-      if (typeof global.it !== "function") {
-      	console.log(oof);
+      if (TESTING) {
+        console.log(oof);
       }
     }
     this.Fetching = false;
