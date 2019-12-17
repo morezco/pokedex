@@ -73,4 +73,4 @@ O que está presente na raíz do projeto, advindo quase que inteiramente do CRA.
 
 ### Certas peculiaridades do Jest com ternários e cadeias
 
-O Jest tende a encarar a presença de ternários e cadeias como linhas dúbias; enquanto que isto poderia ser facilmente remediado com algumas reordenações sintáticas -- e foi feito isto até um certo ponto -- existem críticas sobre esta "trapaça" (e.g. https://en.wikipedia.org/wiki/Modified_condition/decision_coverage). Assim, alguns outros contornos foram aplicados, mas enfim algumas linhas permaneceram uma vez julgadas a decisão de código mais simples e limpa.
+O Jest tende a encarar a presença de ternários e cadeias como linhas dúbias; enquanto que isto poderia ser facilmente remediado com algumas reordenações sintáticas -- e foi feito isto até um certo ponto -- existem críticas sobre esta "trapaça" (e.g. https://en.wikipedia.org/wiki/Modified_condition/decision_coverage). Assim, alguns outros contornos foram aplicados, enquanto que outras linhas permaneceram uma vez julgadas a decisão de código mais simples e limpa.
