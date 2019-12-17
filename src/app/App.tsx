@@ -16,7 +16,7 @@ function App() {
   useScrollPosition(
     ({ currPos }: any) => {
       // eslint-disable-next-line
-      setScrollEffects(currPos.y > -50 !== scrollEffects);
+      setScrollEffects(currPos.y > -50);
     },
     [scrollEffects],
   );

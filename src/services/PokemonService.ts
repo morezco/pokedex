@@ -26,7 +26,7 @@ class PokemonService {
       const { data } = await api.get(`/pokemon/${id}`);
 
       try {
-        data.types = data.types.map(({ type }: any) => type.name);
+        data.types = data.types.map(({ type }: any) => type?.name);
         data.abilities = reduceAbilities(data);
         data.stats = reduceStats(data);
 
@@ -54,8 +54,6 @@ class PokemonService {
 
         return data;
       } catch (ew) {
-        console.log(ew, data);
-
         return data;
       }
     } catch (oof) {

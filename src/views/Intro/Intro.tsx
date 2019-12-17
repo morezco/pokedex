@@ -16,7 +16,7 @@ export default observer(function Intro({
   setMinimiseNav,
 }: LayoutProps) {
   const hide: string = String(
-    Pokemons.results.length ? '-600px 0px 200px 0px' : '100px 0px 0px 0px',
+    Pokemons.results.length ? '-600px 0px 300px 0px' : '100px 0px 0px 0px',
   );
 
   useEffect(() => {
