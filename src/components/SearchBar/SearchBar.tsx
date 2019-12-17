@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { TESTING } from 'shared/constants';
 
 import { Header, Wrapper, LogoContainer, SearchContainer } from './styles';
 
@@ -38,4 +39,4 @@ function Searchbar({
   );
 }
 
-export default withRouter(Searchbar);
+export default !TESTING ? withRouter(Searchbar) : Searchbar;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { TESTING } from 'shared/constants';
 
 import { Picture } from './styles';
 
@@ -21,4 +22,4 @@ function PokemonSprite({ url, width, height, history }: any) {
   ) : null;
 }
 
-export default withRouter(PokemonSprite);
+export default !TESTING ? withRouter(PokemonSprite) : PokemonSprite;

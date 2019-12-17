@@ -2,6 +2,7 @@ import React from 'react';
 import { pokemonDetail } from 'routes';
 import { extractId } from 'shared/helpers';
 import { withRouter } from 'react-router-dom';
+import { TESTING } from 'shared/constants';
 
 import { Container } from './styles';
 
@@ -19,4 +20,4 @@ function Tile({ data, history }: any) {
   );
 }
 
-export default withRouter(Tile);
+export default !TESTING ? withRouter(Tile) : Tile;
