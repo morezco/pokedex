@@ -4,6 +4,8 @@ import nock from 'nock';
 
 import { ditto, pokemonsCollection } from 'tests/mocks';
 
+declare const process: any;
+
 const { REACT_APP_API_URL } = process.env;
 
 const pokemons = (uri: string) => {
@@ -65,5 +67,27 @@ describe('The Pokemon Store', () => {
       expect(PokemonStore.searching).toBe(false);
       done();
     }, 2000);
+  });
+
+  it('should be able to turn a string into a filter lens', () => {
+    const lens = PokemonStore.convertStringToLens('Adimo');
+    const mockResults = [{ name: 'ADIMO POTESTAS' }, { name: 'lorem IPSUM' }];
+
+    expect(mockResults.filter(lens).slice(0, 50)).toHaveLength(1);
+  });
+
+  it('should clear its pokemon selection when prompted to', done => {
+    PokemonStore.clearPokemon();
+    expect(PokemonStore.pokemon).toBe(null);
+
+    PokemonStore.fetchPokemon(1);
+
+    setTimeout(() => {
+      expect(PokemonStore.pokemon).not.toBe(null);
+
+      PokemonStore.clearPokemon();
+      expect(PokemonStore.pokemon).toBe(null);
+      done();
+    }, 1000);
   });
 });

@@ -9,7 +9,6 @@ class PokemonStore {
   @observable private Results: Array<any> = [];
   @observable private Searching: boolean = false;
   @observable private Fetching: boolean = false;
-  @observable private Loading: boolean = false;
   @observable private Pokemon: any;
   @observable private Lookup: string = '';
 
@@ -17,21 +16,20 @@ class PokemonStore {
     this.loadCollection();
   }
 
-  @action public async search(lens: any) {
-    if (typeof lens === 'string') {
-      this.lookup = lens;
-      lens = (value: any) =>
-        value ? ExtractProperty(value).includes(Clean(value)) : false;
-    }
+  public convertStringToLens(query: string) {
+    this.lookup = typeof query === 'function' ? 'query' : query;
+    return typeof query === 'function'
+      ? query
+      : (value: any) =>
+          value ? ExtractProperty(value).includes(Clean(query)) : false;
+  }
 
+  @action public async search(lens: any) {
+    lens = this.convertStringToLens(lens);
     this.Searching = true;
-    if (this.Collection && toJS(this.Collection) instanceof Array) {
-      this.Results = toJS(this.Collection)
-        .filter(lens)
-        .slice(0, 50);
-    } else {
-      this.Results = [];
-    }
+    this.Results = toJS(this.Collection)
+      .filter(lens)
+      .slice(0, 50);
     this.Searching = false;
   }
 
@@ -40,7 +38,7 @@ class PokemonStore {
     try {
       this.Collection = await Service.getAll();
     } catch (oof) {
-      if (TESTING) {
+      if (!TESTING) {
         console.log(oof);
       }
     }
@@ -57,16 +55,8 @@ class PokemonStore {
     return this.Fetching;
   }
 
-  set fetching(value: boolean) {
-    this.Fetching = value;
-  }
-
   @computed get searching(): boolean {
     return this.Searching;
-  }
-
-  @computed get loading(): boolean {
-    return this.Loading;
   }
 
   @computed get collection(): Array<any> {

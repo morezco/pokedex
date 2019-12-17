@@ -5,8 +5,12 @@ import api from 'api';
 
 class PokemonService {
   public async getAll(): Promise<Array<any>> {
-    const { data } = await api.get('/pokemon?limit=-1');
-    return data.results || data;
+    try {
+      const { data } = await api.get('/pokemon?limit=-1');
+      return data.results || data;
+    } catch (oof) {
+      return [];
+    }
   }
 
   public async getOne(id: string | number): Promise<any> {
