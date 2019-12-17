@@ -39,7 +39,9 @@ class PokemonStore {
     try {
       this.Collection = await Service.getAll();
     } catch (oof) {
-      console.log(oof);
+      if (typeof global.it !== "function") {
+      	console.log(oof);
+      }
     }
     this.Fetching = false;
   }
