@@ -18,6 +18,7 @@ export default function PokemonPicture({
   const [url, setUrl] = useState(pictureURL(name));
   return err < 2 ? (
     <img
+      data-testid='pokemonpicture'
       onError={() => {
         if (!err) {
           setErr(1);
