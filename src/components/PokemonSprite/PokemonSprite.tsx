@@ -5,6 +5,7 @@ import { Picture } from './styles';
 
 import { spriteURL } from 'shared/constants';
 import { extractId } from 'shared/helpers';
+import { pokemonDetail } from 'routes';
 
 export function PokemonSprite({ url, width, height, history }: any) {
   const [error, setError] = useState(false);
@@ -16,7 +17,7 @@ export function PokemonSprite({ url, width, height, history }: any) {
       width={width || '80'}
       height={height || '80'}
       onError={() => setError(true)}
-      onClick={() => history.push(`/pokemon/${id}`)}
+      onClick={() => history.push(pokemonDetail(id))}
       src={spriteURL(id)}
     />
   ) : null;

@@ -26,6 +26,10 @@ export const extractId = (from: URL | string) => {
   return arr[arr.length - 2];
 };
 
+/**
+ * Gets a name string and returns it formatted to first-capitals.
+ * @param name the name string
+ */
 export const nameLike = (name: string) =>
   name
     .split(' ')

@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { expect as ex } from 'chai';
 
-import Routes from './index';
+import Routes, { pokemonDetail } from './index';
 
 describe('The Routes Component', () => {
   it('renders', () => {
@@ -21,7 +21,7 @@ describe('The Routes Component', () => {
 
   it('navigates', () => {
     const wrapper = mount(
-      <MemoryRouter initialEntries={['/pokemon/2']}>
+      <MemoryRouter initialEntries={[pokemonDetail(2)]}>
         <Routes scrollEffects={false} setMinimiseNav={() => {}} />,
       </MemoryRouter>,
     );

@@ -2,7 +2,7 @@
 
 Este projeto é um exercício de front-end feito para simular um consumidor-apresentador da API hospedada em https://pokeapi.co.
 
-Esta aplicação de apresentação é feita em React, empregando o uso de TypeScript para o código e fluxo de dados com a biblioteca MobX.
+Esta aplicação responsiva de apresentação é feita em React, empregando o uso de TypeScript para o código e fluxo de dados com a biblioteca MobX. Ela está pronta para dockerização.
 
 ## Configuração de ambiente
 
@@ -41,12 +41,36 @@ Para consolidar uma versão de produção da aplicação.<br />
 
 ## Estrutura de Arquivos
 
-**O Componente App reside em sua própria pasta dedicada, `/app`.** Este componente deve ser responsável apenas por instanciar **Páginas** e engatilhar os processos iniciais para o carregamento saudável da aplicação, se houverem quaisquer, e instanciar qual componente página for melhor apropriado para o estado maior da aplicação.
+Todos os componentes desta aplicação são acompanhados de um arquivo de testes, que estará presente no mesmo diretório e será chamado _Componente.test.tsx_.
 
-**As páginas residem em `/pages`.** Suas funções devem ser sempre instanciar componentes que, para um subconjunto de rotas quaisquer que compartilhem do mesmo estado maior da aplicação (por exemplo, Autenticação) ou que instanciem os mesmos **componentes de UI** estáticos (por exemplo, a Navbar), estejam sempre presentes. Além destes componentes estáticos, encarrega-se de instanciar também as ditas **rotas**. Se aplicável, um componente página deve estar envelopado pelo BrowserRouter do react-router-dom para permitir que todos os componentes-filhos possam herdar e usar history e location para somente aquela seção da aplicação.
+Componentes que tenham um grande volume de processamento de dados devem ter as funções que processam tais dados modularizadas e encapsuladas em pequenos exports testáveis. Por convenção, os componentes que fazem grandes processamentos contam com um arquivo para este propósito, chamado _processing.ts_, sempre em suas raízes.
 
-**Rotas residem em `/routes`.** Devem ser nada mais que a estrutura verbose do react router, com exceção do BrowserRouter, que já se faz presente nos componentes página. A divisão dos arquivos de rotas deve ir ao encontro da divisão dos componentes página.
+**O Componente App reside em sua própria pasta dedicada, `/app`.** Este componente deve ser responsável apenas por instanciar o _roteador_, a _barra de navegação_ e as _rotas da aplicação_.
 
-**Componentes de UI ficam em `/components`.** Se um componente é generalista o suficiente para pertencer a mais de uma página, ele pertence a `/components`. Componentes que dependam de componentes menores devem ter estes colocados dentro de sua própria estrutura.
+**As views residem em `/views`.**
 
-**Registros ficam em `/store`**. O fluxo de dados nesta aplicação consiste de estados globais estáticos isolados uns dos outros em arquivos Store, na pasta store. Os estados são compostos de classes com observáveis do MobX que qualquer componente pode acessar e modificar.
+**Rotas residem em `/routes`.** As definições das rotas devem ser feitas em funções exportadas de modo a permitir que o resto da aplicação as importe e se adapte uniformemente às constantes definitórias. Isso não inclui rotas usadas em testes ou de serviços externos, apenas as rotas internas da aplicação.
+
+**Componentes de UI ficam em `/components`.** Se um componente é generalista o suficiente para pertencer a mais de uma página, ele pertence a `/components`. Componentes que dependam de componentes menores devem ter estes colocados dentro de sua própria estrutura, não em `/components`.
+
+**Registros ficam em `/store`.** O fluxo de dados nesta aplicação consiste de estados globais estáticos isolados uns dos outros em arquivos Store, na pasta store. Os estados são compostos de classes com observáveis do MobX que qualquer componente pode acessar e modificar através dos getters e setters providos. A store **não** deve efetuar comunicações externas, somente segurar os dados advindos delas.
+
+**Serviços ficam em `/services`.** Estes devem ser responsáveis por toda e qualquer comunicação externa, bem como a formatação destes para entrega uniforme a qualquer entidade que as precise na aplicação.
+
+**Recursos compartilhados simples ficam em `/shared`.** Estes incluem constantes (exceto rotas), funções de apoio, etc.
+
+## Sobre os testes
+
+Na busca de 100% de cobertura dos testes, foram desconsiderados os seguintes:
+
+### Efeitos dependentes da deslizagem da janela
+
+E consequentemente o hook _useScrollPosition()_). Este compõe em íntegra o arquivo _`shared/hooks.ts`_.
+
+### O arquivo index.tsx
+
+O que está presente na raíz do projeto, advindo quase que inteiramente do CRA.
+
+### Certas peculiaridades do Jest com ternários e cadeias
+
+O Jest tende a encarar a presença de ternários e cadeias como linhas dúbias; enquanto que isto poderia ser facilmente remediado com algumas reordenações sintáticas -- e foi feito isto até um certo ponto -- existem críticas sobre esta "trapaça" (e.g. https://en.wikipedia.org/wiki/Modified_condition/decision_coverage). Assim, alguns outros contornos foram aplicados, mas enfim algumas linhas permaneceram uma vez julgadas a decisão de código mais simples e limpa.

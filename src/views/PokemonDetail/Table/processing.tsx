@@ -1,6 +1,7 @@
 import React from 'react';
 import { extractId } from 'shared/helpers';
 import { spriteURL } from 'shared/constants';
+import { pokemonDetail } from 'routes';
 
 import { Stat } from '../interfaces';
 import { TableProps } from './Table';
@@ -66,7 +67,7 @@ export const EvolutionaryTable = (pokemon: any, history: any): TableProps => ({
     value: <p>{x.species.name}</p>,
     act: () => {
       Pokemons.clearPokemon();
-      history.push(`/pokemon/${extractId(x.species.url)}`);
+      history.push(pokemonDetail(extractId(x.species.url)));
     },
   })),
 });
