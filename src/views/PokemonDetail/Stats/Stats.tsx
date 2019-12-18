@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import { Container, Layer, Bar } from './styles';
+import gsap from 'gsap';
 
 export interface StatsProps {
   stat: number;
@@ -21,10 +22,15 @@ export const statColour = (value: number) => {
 };
 
 export default function Stats({ stat }: StatsProps) {
+  let ref: any = useRef(null);
+  useEffect(() => {
+    gsap.to(ref, { duration: 1, css: { width: (stat / 130) * 100 + '%' } });
+  }, []);
+
   return (
     <Container>
       <Layer>
-        <Bar width={(stat / 130) * 100 + '%'} colour={statColour(stat)} />
+        <Bar ref={el => (ref = el)} width={'0'} colour={statColour(stat)} />
       </Layer>
       <p>{stat}</p>
     </Container>
