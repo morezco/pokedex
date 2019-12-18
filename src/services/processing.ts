@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
-
 export const reduceAbilities = (data: any) =>
   data.abilities.map(({ is_hidden, ability }: any) => [
     is_hidden ? 'hidden' : '',

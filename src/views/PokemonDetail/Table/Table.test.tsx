@@ -4,19 +4,18 @@ import { mount } from 'enzyme';
 import { expect } from 'chai';
 
 import Table from './Table';
-import {
-  PokedexTable,
-  TrainingTable,
-  BreedingTable,
-  StatsTable,
-  EvolutionaryTable,
-  evo,
-} from './processing';
+import { StatsTable, EvolutionaryTable, evo } from './processing';
 
 describe('Table', () => {
   it('renders', () => {
+    const [delay, setDelay] = [{ value: 0 }, (x: number) => (delay.value = x)];
     const wrapper = mount(
-      <Table title={'test'} data={[{ name: 'adimo', value: 50 }]} />,
+      <Table
+        title={'test'}
+        delay={delay.value}
+        setDelay={setDelay}
+        data={[{ name: 'adimo', value: 50 }]}
+      />,
     );
     expect(wrapper).to.have.length(1);
   });

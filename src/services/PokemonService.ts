@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
-
 import { extractId } from 'shared/helpers';
 import api from 'api';
 

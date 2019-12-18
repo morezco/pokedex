@@ -24,7 +24,11 @@ export const statColour = (value: number) => {
 export default function Stats({ stat }: StatsProps) {
   let ref: any = useRef(null);
   useEffect(() => {
-    gsap.to(ref, { duration: 1, css: { width: (stat / 130) * 100 + '%' } });
+    gsap.to(ref, {
+      duration: 1,
+      css: { width: (stat / 130) * 100 + '%' },
+      delay: 2,
+    });
   }, []);
 
   return (
