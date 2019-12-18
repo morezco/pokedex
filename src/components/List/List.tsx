@@ -16,17 +16,15 @@ export default observer(function List() {
   const { pokemon } = Pokemons;
 
   const [hovering, setHovering] = useState(-1);
-  const [dismiss, setDismiss] = useState(true);
 
   useEffect(() => {
-    setDismiss(false);
     if (pokemon) {
       Pokemons.clearPokemon();
     }
   }, [pokemon]);
 
   return (
-    <Content onClick={() => setDismiss(true)} dismiss={dismiss}>
+    <Content>
       {Pokemons.results.map((result: PokemonDataBlob, i: number) => (
         <Tile
           hovering={hovering}

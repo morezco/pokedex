@@ -7,19 +7,12 @@ import { Container } from './styles';
 
 import { PokemonSprite } from 'components';
 
-export function Tile({ data, history, hovering, setHovering, index }: any) {
+export function Tile({ data, history }: any) {
   const gotoPokemon = () =>
-    setTimeout(() => {
-      history.push(`${pokemonDetail(extractId(data.url))}`);
-    }, 1000);
+    history.push(`${pokemonDetail(extractId(data.url))}`);
 
   return (
-    <Container
-      hovering={hovering}
-      index={index}
-      onMouseEnter={() => setHovering(index)}
-      onClick={gotoPokemon}
-    >
+    <Container className={'Tile'} onClick={gotoPokemon}>
       <h5>{data.name}</h5>
       <PokemonSprite url={data.url} />
     </Container>

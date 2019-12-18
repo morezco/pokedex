@@ -1,11 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-interface ContainerProps {
-  hovering: number;
-  index?: number;
-}
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
     width: 125px;
     height: 125px
     margin: 5px;
@@ -27,23 +22,7 @@ export const Container = styled.div<ContainerProps>`
     border-radius: 10px;
 
     font: 1em Poppins;
-
-    ${({ hovering, index }) =>
-      hovering > -1 &&
-      (hovering !== index
-        ? css`
-            opacity: 0.6;
-            transform: scale(0.9, 0.9);
-            box-shadow: 0px 0px 5px #00000088;
-          `
-        : css`
-            opacity: 1;
-            transform: scale(1.05, 1.05);
-            box-shadow: 0px 0px 40px #00000034;
-          `)}
      
-
-    
     h5 {
       margin: 5px 0px;
     }
