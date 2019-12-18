@@ -1,43 +1,5 @@
 import PokemonStore from '../PokemonStore';
 
-import nock from 'nock';
-
-import { ditto, pokemonsCollection } from 'tests/mocks';
-
-declare const process: any;
-
-const { REACT_APP_API_URL } = process.env;
-
-const pokemons = (uri: string) => {
-  const pieces = uri
-    ?.split('/')
-    .slice(3)
-    .map(piece =>
-      piece.includes('?') ? piece.substring(0, piece.indexOf('?')) : piece,
-    );
-
-  return pieces[0] === 'pokemon' && pieces.length === 1;
-};
-
-const pokemon = (uri: string) => {
-  const pieces = uri
-    ?.split('/')
-    .slice(3)
-    .map(piece =>
-      piece.includes('?') ? piece.substring(0, piece.indexOf('?')) : piece,
-    );
-
-  return pieces[0] === 'pokemon' && pieces.length === 2;
-};
-
-nock(String(REACT_APP_API_URL))
-  .get(pokemon)
-  .reply(200, ditto)
-  .get(pokemons)
-  .reply(200, pokemonsCollection)
-  .get(/.*/)
-  .reply(200, pokemonsCollection);
-
 describe('The Pokemon Store', () => {
   it('should be able to fetch pokemons', done => {
     PokemonStore.loadCollection();

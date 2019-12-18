@@ -6,6 +6,8 @@ import { expect as cexpect } from 'chai';
 
 import { PokemonSprite } from './PokemonSprite';
 
+import { Picture } from './styles';
+
 describe('The Pokemon Sprite component', () => {
   it('renders', () => {
     const { getByTestId } = render(
@@ -28,8 +30,7 @@ describe('The Pokemon Sprite component', () => {
       />,
     );
 
-    wrapper.simulate('error');
-
+    wrapper.find(Picture).simulate('error');
     cexpect(wrapper.find('img')).not.to.have.length;
   });
 
@@ -44,8 +45,7 @@ describe('The Pokemon Sprite component', () => {
       />,
     );
 
-    wrapper.simulate('click');
-
+    wrapper.find(Picture).simulate('click');
     setTimeout(() => {
       cexpect(history).to.have.length(1);
       done();

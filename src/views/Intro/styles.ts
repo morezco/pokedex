@@ -12,8 +12,9 @@ export const SearchLayer = styled.div<LayoutProps>`
   z-index: 1000;
 
   @media (min-width: 1000px) {
-    position: sticky;
-    top: 50px !important;
+    position: fixed;
+    top: 150px !important;
+    right: 10vw;
 
     width: 100%;
     margin-left: 10px;
@@ -31,7 +32,7 @@ export const SearchLayer = styled.div<LayoutProps>`
 
   p {
     width: 200px;
-    margin-top: 5px;
+    margin-top: -100px;
     ${({ scrollEffects }) => scrollEffects && 'color: white;'}
   }
 `;
