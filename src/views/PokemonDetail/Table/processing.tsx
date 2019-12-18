@@ -67,7 +67,9 @@ export const EvolutionaryTable = (pokemon: any, history: any): TableProps => ({
     value: <p>{x.species.name}</p>,
     act: () => {
       Pokemons.clearPokemon();
-      history.push(pokemonDetail(extractId(x.species.url)));
+      setTimeout(() => {
+        history.push(pokemonDetail(extractId(x.species.url)));
+      }, 600);
     },
   })),
 });

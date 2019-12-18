@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
 
 import { Content } from './styles';
@@ -15,16 +15,26 @@ interface PokemonDataBlob {
 export default observer(function List() {
   const { pokemon } = Pokemons;
 
+  const [hovering, setHovering] = useState(-1);
+  const [dismiss, setDismiss] = useState(true);
+
   useEffect(() => {
+    setDismiss(false);
     if (pokemon) {
       Pokemons.clearPokemon();
     }
   }, [pokemon]);
 
   return (
-    <Content>
+    <Content onClick={() => setDismiss(true)} dismiss={dismiss}>
       {Pokemons.results.map((result: PokemonDataBlob, i: number) => (
-        <Tile data={result} key={i} />
+        <Tile
+          hovering={hovering}
+          setHovering={setHovering}
+          data={result}
+          key={i}
+          index={i}
+        />
       ))}
     </Content>
   );

@@ -17,7 +17,11 @@ export function PokemonSprite({ url, width, height, history }: any) {
       width={width || '80'}
       height={height || '80'}
       onError={() => setError(true)}
-      onClick={() => history.push(pokemonDetail(id))}
+      onClick={() =>
+        setTimeout(() => {
+          history.push(pokemonDetail(id));
+        }, 600)
+      }
       src={spriteURL(id)}
     />
   ) : null;
