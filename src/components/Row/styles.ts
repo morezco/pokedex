@@ -67,7 +67,7 @@ export const Element = styled.div<RowProps>`
 
   @media (max-width: 1000px) {
     ${COL(true)}
-    ${CENTER(true)}
+    ${CENTER(true, true)}
   }
 `;
 
