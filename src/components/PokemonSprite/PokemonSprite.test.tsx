@@ -33,7 +33,7 @@ describe('The Pokemon Sprite component', () => {
     cexpect(wrapper.find('img')).not.to.have.length;
   });
 
-  it('links to its represented pokemon', () => {
+  it('links to its represented pokemon', done => {
     const history: Array<string> = [];
     const wrapper = mount(
       <PokemonSprite
@@ -46,6 +46,9 @@ describe('The Pokemon Sprite component', () => {
 
     wrapper.simulate('click');
 
-    cexpect(history).to.have.length(1);
+    setTimeout(() => {
+      cexpect(history).to.have.length(1);
+      done();
+    }, 1000);
   });
 });

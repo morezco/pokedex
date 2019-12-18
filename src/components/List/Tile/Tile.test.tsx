@@ -8,7 +8,7 @@ import { Tile } from './Tile';
 import { pokemonDetail } from 'routes';
 
 describe('The Tile Component', () => {
-  it('should push to the router upon click', () => {
+  it('should push to the router upon click', done => {
     const history: Array<string> = [];
     const wrapper = mount(
       <MemoryRouter>
@@ -24,7 +24,10 @@ describe('The Tile Component', () => {
 
     wrapper.simulate('click');
 
-    expect(history).to.have.length(1);
-    expect(history[0]).to.be.string(pokemonDetail(133));
+    setTimeout(() => {
+      expect(history).to.have.length(1);
+      expect(history[0]).to.be.string(pokemonDetail(133));
+      done();
+    }, 1000);
   });
 });

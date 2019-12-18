@@ -41,7 +41,7 @@ describe('evo', () => {
 });
 
 describe('EvolutionaryTable', () => {
-  it('returns evolutionary data', () => {
+  it('returns evolutionary data', done => {
     const history: Array<string> = [];
     const mock = {
       evolution: {
@@ -65,7 +65,10 @@ describe('EvolutionaryTable', () => {
     expect(table.title).to.be.string('Possible Evolutions');
 
     table.data[0].act();
-    expect(history[0]).to.be.string(`/pokemon/1`);
+    setTimeout(() => {
+      expect(history[0]).to.be.string(`/pokemon/1`);
+      done();
+    }, 1000);
   });
 });
 

@@ -10,7 +10,7 @@ const { REACT_APP_API_URL } = process.env;
 
 const pokemons = (uri: string) => {
   const pieces = uri
-    .split('/')
+    ?.split('/')
     .slice(3)
     .map(piece =>
       piece.includes('?') ? piece.substring(0, piece.indexOf('?')) : piece,
@@ -21,7 +21,7 @@ const pokemons = (uri: string) => {
 
 const pokemon = (uri: string) => {
   const pieces = uri
-    .split('/')
+    ?.split('/')
     .slice(3)
     .map(piece =>
       piece.includes('?') ? piece.substring(0, piece.indexOf('?')) : piece,
