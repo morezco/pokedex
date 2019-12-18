@@ -55,7 +55,7 @@ export default observer(function Intro({
         )}
       </SearchLayer>
       <div data-testid='grid'>
-        {Pokemons.lookup && Pokemons.results.length && <List />}
+        {(Pokemons.lookup && Pokemons.results.length && <List />) || null}
       </div>
     </Section>
   );
